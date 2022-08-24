@@ -1,9 +1,8 @@
 export const CategoriesData = {
   tabs: [
-    'home',
+    'general',
     'business',
     'entertainment',
-    'general',
     'health',
     'science',
     'sports',

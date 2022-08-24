@@ -1,25 +1,26 @@
 import React from 'react';
 import {
-  createStyles,
-  Container,
-  Group,
-  Burger,
-  Title,
-  Button,
-  TextInput,
   ActionIcon,
+  Burger,
+  Button,
+  Container,
+  createStyles,
+  Group,
+  TextInput,
+  Title,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { IconSearch, IconArrowRight, IconArrowLeft } from '@tabler/icons';
+import { IconArrowLeft, IconArrowRight, IconSearch } from '@tabler/icons';
 
 const useStyles = createStyles((theme) => ({
   header: {
+    position: 'sticky',
     paddingTop: theme.spacing.sm,
     backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
     borderBottom: `1px solid ${
       theme.colorScheme === 'dark' ? 'transparent' : theme.colors.gray[2]
     }`,
-    marginBottom: 120,
+    marginBottom: theme.spacing.md,
   },
 
   mainSection: {
