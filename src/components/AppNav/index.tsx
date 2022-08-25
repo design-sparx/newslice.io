@@ -8,6 +8,7 @@ import {
   Container,
   ActionIcon,
   Tooltip,
+  Button,
 } from '@mantine/core';
 import { IconSearch, IconNews, IconBell, IconSettings } from '@tabler/icons';
 
@@ -65,18 +66,19 @@ const AppNav = ({ links }: AppNavProps): JSX.Element => {
   const { classes } = useStyles();
 
   const items = links.map((link) => (
-    <a
+    <Button
       key={link.label}
-      href={link.link}
+      component='a'
+      href={`/#/category${link.link}`}
       className={classes.link}
-      onClick={(event) => event.preventDefault()}
+      variant='subtle'
     >
       {link.label}
-    </a>
+    </Button>
   ));
 
   return (
-    <Header className={classes.header} mb={60} height='100%'>
+    <Header className={classes.header} mb={30} height='100%'>
       <div className={classes.inner}>
         <Group>
           <IconNews size={24} />
@@ -104,15 +106,16 @@ const AppNav = ({ links }: AppNavProps): JSX.Element => {
         </Group>
       </div>
       <Container className={classes.inner} mt='md'>
-        <Group spacing={5} className={classes.links}>
-          <a
+        <Group spacing='xs' className={classes.links}>
+          <Button
             key={'home'}
-            href='/'
+            component='a'
+            href='/#/'
             className={classes.link}
-            onClick={(event) => event.preventDefault()}
+            variant='subtle'
           >
             home
-          </a>
+          </Button>
           <Divider orientation='vertical' />
           {items}
         </Group>

@@ -10,6 +10,7 @@ const useStyles = createStyles((theme: MantineTheme) => ({
   },
   titleWrapper: {
     paddingBottom: theme.spacing.lg,
+    textTransform: 'capitalize'
   },
 }));
 
@@ -17,13 +18,13 @@ interface PopularProps {
   articles: Article[];
 }
 
-const PopularSection = ({ articles }: PopularProps) => {
+const PopularSection = ({ articles }: PopularProps): JSX.Element => {
   const { classes } = useStyles();
   return (
     <Box mb="lg">
       <Group className={classes.titleWrapper}>
         <Title order={3}>
-          Popular articles
+          Popular
         </Title>
       </Group>
       <Divider className={classes.titleWrapper} />

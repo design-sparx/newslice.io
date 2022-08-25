@@ -1,4 +1,3 @@
-import { Container, createStyles, MantineTheme } from '@mantine/core';
 import React from 'react';
 import HomeSection from '../components/Home';
 import Wrapper from './Wrapper';
@@ -6,10 +5,13 @@ import { Article } from '../constants/articles';
 import {
   CategoriesData,
   HeadlinesCategoryBusiness,
-  HeadlinesCategoryEntertainment, HeadlinesCategoryGeneral,
+  HeadlinesCategoryEntertainment,
+  HeadlinesCategoryGeneral,
   HeadlinesCategoryHealth,
   HeadlinesCategoryScience,
-  HeadlinesCategorySports, HeadlinesCategoryTechnology, HeadlinesCountryData,
+  HeadlinesCategorySports,
+  HeadlinesCategoryTechnology,
+  HeadlinesCountryData,
 } from '../data';
 
 interface ICategories {
@@ -17,17 +19,7 @@ interface ICategories {
   articles: Article[];
 }
 
-const useStyles = createStyles((theme: MantineTheme) => ({
-  container: {
-    width: '90%',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-  },
-}));
-
 const Home = (): JSX.Element => {
-  const { classes } = useStyles();
-
   const refinedCategories = CategoriesData.links.map(c => {
     const cat = c.label;
     const a: ICategories = {
@@ -62,18 +54,12 @@ const Home = (): JSX.Element => {
 
   return (
     <div>
-      <Wrapper>
-        <Container fluid className={classes.container}>
-          <HomeSection
-            feed={HeadlinesCategoryGeneral.articles.slice(0, 10)}
-            headlines={HeadlinesCategoryGeneral.articles.slice(5, 10)}
-            recent={HeadlinesCategoryGeneral.articles.slice(10, 15)}
-            popular={HeadlinesCountryData.articles.slice(15, 20)}
-            trending={HeadlinesCountryData.articles.slice(10, 15)}
-            totalResults={HeadlinesCountryData.totalResults}
-            categories={refinedCategories}
-          />
-        </Container>
+      <Wrapper showFeed>
+        <HomeSection
+          headlines={HeadlinesCategoryGeneral.articles.slice(5, 10)}
+          totalResults={HeadlinesCountryData.totalResults}
+          categories={refinedCategories}
+        />
       </Wrapper>
     </div>
   );

@@ -38,7 +38,7 @@ const CategoriesSection = ({ categories }: CategoriesProps): JSX.Element => {
         {categories.map(c =>
           <Tabs.Panel key={`cat-pane-${c.title}`} value={c.title} pt='xs'>
             <TitleCard article={c.articles[0]} imageHeight={300} />
-            <SimpleGrid cols={3} spacing='md' breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
+            <SimpleGrid cols={2} spacing='md' breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
               {c.articles.slice(1, 10).map((article) => (
                 <TextImageCard key={article.url} article={article} showDescription />
               ))}

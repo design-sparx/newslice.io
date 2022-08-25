@@ -24,7 +24,7 @@ const TrendingSection = ({ articles }: TrendingProps): JSX.Element => {
     <Box mb='lg'>
       <Group className={classes.titleWrapper}>
         <Title order={3}>
-          Trending articles
+          Trending
         </Title>
       </Group>
       <Divider className={classes.titleWrapper} />

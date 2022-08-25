@@ -35,7 +35,7 @@ const useStyles = createStyles((theme: MantineTheme) => ({
 interface ArticleCardProps {
   article: Article;
   size?: Size;
-  showDescription?: boolean
+  showDescription?: boolean;
 }
 
 const TextImageCard = ({ className, article, size, showDescription }: ArticleCardProps &
@@ -75,6 +75,7 @@ const TextImageCard = ({ className, article, size, showDescription }: ArticleCar
         lineClamp={lineClamp}
         component='a'
         mb={margin}
+        size={size === Size.lg ? 'lg' : 'md'}
         {...linkProps}
       >
         {title}

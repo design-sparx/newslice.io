@@ -90,7 +90,7 @@ const HorizontalCard = ({ article, size, showDescription }: ArticleCardVerticalP
             </Center>
           </Group>
           {(showDescription === true) &&
-            <Text lineClamp={2}>{description}</Text>
+            <Text lineClamp={lineClamp}>{description}</Text>
           }
         </div>
       </Group>
