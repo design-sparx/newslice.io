@@ -14,7 +14,7 @@ interface FeedProps {
 const FeedSection = ({ articles }: FeedProps): JSX.Element => {
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm}px)`);
-  const autoplay = useRef(Autoplay({ delay: 2000 }));
+  const autoplay = useRef(Autoplay({ delay: 10000 }));
 
   const slides = articles.slice(0, 5).map((article) => (
     <Carousel.Slide key={article.title}>

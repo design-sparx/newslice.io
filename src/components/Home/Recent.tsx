@@ -29,12 +29,11 @@ const RecentSection = ({ articles }: RecentProps) => {
       </Group>
       <Divider className={classes.titleWrapper} />
       <SimpleGrid cols={1} spacing='xs' breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
-        {articles.slice(0, 10).map((article) => (
+        {articles.map((article) => (
           <HorizontalCard
             key={article.url}
             article={article}
-            showDescription
-            size={Size.lg}
+            size={Size.md}
           />
         ))}
       </SimpleGrid>

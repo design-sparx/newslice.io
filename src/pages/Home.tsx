@@ -1,4 +1,4 @@
-import { Container } from '@mantine/core';
+import { Container, createStyles, MantineTheme } from '@mantine/core';
 import React from 'react';
 import HomeSection from '../components/Home';
 import Wrapper from './Wrapper';
@@ -17,8 +17,19 @@ interface ICategories {
   articles: Article[];
 }
 
+const useStyles = createStyles((theme: MantineTheme) => ({
+  container: {
+    width: '90%',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+  },
+}));
+
 const Home = (): JSX.Element => {
-  const refinedCategories = CategoriesData.tabs.map(cat => {
+  const { classes } = useStyles();
+
+  const refinedCategories = CategoriesData.links.map(c => {
+    const cat = c.label;
     const a: ICategories = {
       title: '',
       articles: [],
@@ -52,9 +63,13 @@ const Home = (): JSX.Element => {
   return (
     <div>
       <Wrapper>
-        <Container fluid>
+        <Container fluid className={classes.container}>
           <HomeSection
-            articles={HeadlinesCountryData.articles}
+            feed={HeadlinesCategoryGeneral.articles.slice(0, 10)}
+            headlines={HeadlinesCategoryGeneral.articles.slice(5, 10)}
+            recent={HeadlinesCategoryGeneral.articles.slice(10, 15)}
+            popular={HeadlinesCountryData.articles.slice(15, 20)}
+            trending={HeadlinesCountryData.articles.slice(10, 15)}
             totalResults={HeadlinesCountryData.totalResults}
             categories={refinedCategories}
           />

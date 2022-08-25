@@ -1,132 +1,123 @@
-import React from 'react';
 import {
-  ActionIcon,
-  Burger,
-  Button,
-  Container,
   createStyles,
+  Header,
+  Autocomplete,
   Group,
-  TextInput,
-  Title,
+  Text,
+  Divider,
+  Container,
+  ActionIcon,
+  Tooltip,
 } from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
-import { IconArrowLeft, IconArrowRight, IconSearch } from '@tabler/icons';
+import { IconSearch, IconNews, IconBell, IconSettings } from '@tabler/icons';
 
 const useStyles = createStyles((theme) => ({
   header: {
     position: 'sticky',
     paddingTop: theme.spacing.sm,
-    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
-    borderBottom: `1px solid ${
-      theme.colorScheme === 'dark' ? 'transparent' : theme.colors.gray[2]
-    }`,
-    marginBottom: theme.spacing.md,
-  },
-
-  mainSection: {
     paddingBottom: theme.spacing.sm,
   },
 
-  user: {
-    color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.black,
-    padding: `${theme.spacing.xs}px ${theme.spacing.sm}px`,
-    borderRadius: theme.radius.sm,
-    transition: 'background-color 100ms ease',
+  inner: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '90%',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+  },
 
-    '&:hover': {
-      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.white,
+  links: {
+    textTransform: 'capitalize',
+    [theme.fn.smallerThan('md')]: {
+      display: 'none',
     },
+  },
 
+  search: {
+    width: 500,
     [theme.fn.smallerThan('xs')]: {
       display: 'none',
     },
   },
 
-  burger: {
-    [theme.fn.largerThan('xs')]: {
-      display: 'none',
-    },
-  },
-
-  userActive: {
-    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.white,
-  },
-
-  tabs: {
-    [theme.fn.smallerThan('sm')]: {
-      display: 'none',
-    },
-  },
-
-  tabsList: {
-    borderBottom: '0 !important',
-  },
-
-  tab: {
+  link: {
+    display: 'block',
+    lineHeight: 1,
+    padding: '8px 12px',
+    borderRadius: theme.radius.sm,
+    textDecoration: 'none',
+    color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.gray[7],
+    fontSize: theme.fontSizes.sm,
     fontWeight: 500,
-    height: 38,
-    backgroundColor: 'transparent',
 
     '&:hover': {
-      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1],
-    },
-
-    '&[data-active]': {
-      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white,
-      borderColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[2],
+      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
     },
   },
 }));
 
 interface AppNavProps {
-  user: { name: string; image: string };
-  tabs: string[];
+  links: Array<{ link: string; label: string }>;
 }
 
-const AppNav = ({ user, tabs }: AppNavProps): JSX.Element => {
-  const { classes, theme } = useStyles();
-  const [opened, { toggle }] = useDisclosure(false);
+const AppNav = ({ links }: AppNavProps): JSX.Element => {
+  const { classes } = useStyles();
 
-  const items = tabs.map((tab) => <Button key={tab}>{tab}</Button>);
+  const items = links.map((link) => (
+    <a
+      key={link.label}
+      href={link.link}
+      className={classes.link}
+      onClick={(event) => event.preventDefault()}
+    >
+      {link.label}
+    </a>
+  ));
 
   return (
-    <div className={classes.header}>
-      <Container className={classes.mainSection}>
-        <Group position='apart'>
-          <Title order={3}>Newslice.io</Title>
-
-          <Burger opened={opened} onClick={toggle} className={classes.burger} size='sm' />
-
-          <TextInput
-            icon={<IconSearch size={14} stroke={1.5} />}
-            size='sm'
-            rightSection={
-              <ActionIcon size={24} color={theme.primaryColor} variant='filled'>
-                {theme.dir === 'ltr' ? (
-                  <IconArrowRight size={14} stroke={1.5} />
-                ) : (
-                  <IconArrowLeft size={14} stroke={1.5} />
-                )}
-              </ActionIcon>
-            }
+    <Header className={classes.header} mb={60} height='100%'>
+      <div className={classes.inner}>
+        <Group>
+          <IconNews size={24} />
+          <Text size='lg' transform='uppercase' weight={700}>Newslice</Text>
+        </Group>
+        <Group>
+          <Autocomplete
+            className={classes.search}
             placeholder='Search'
-            rightSectionWidth={42}
+            icon={<IconSearch size={16} stroke={1.5} />}
+            data={['React', 'Angular', 'Vue', 'Next.js', 'Riot.js', 'Svelte', 'Blitz.js']}
           />
         </Group>
-      </Container>
-      <Container>
-        <Group
-          pb='md'
-          classNames={{
-            root: classes.tabs,
-            tabsList: classes.tabsList,
-            tab: classes.tab,
-          }}
-        >
+        <Group>
+          <Tooltip label='notifications'>
+            <ActionIcon>
+              <IconBell size={18} />
+            </ActionIcon>
+          </Tooltip>
+          <Tooltip label='preferences'>
+            <ActionIcon>
+              <IconSettings size={18} />
+            </ActionIcon>
+          </Tooltip>
+        </Group>
+      </div>
+      <Container className={classes.inner} mt='md'>
+        <Group spacing={5} className={classes.links}>
+          <a
+            key={'home'}
+            href='/'
+            className={classes.link}
+            onClick={(event) => event.preventDefault()}
+          >
+            home
+          </a>
+          <Divider orientation='vertical' />
           {items}
         </Group>
       </Container>
-    </div>
+    </Header>
   );
 };
 

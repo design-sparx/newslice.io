@@ -12,7 +12,7 @@ interface HeadlinesProps {
 const HeadlinesSection = ({ articles }: HeadlinesProps): JSX.Element => {
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm}px)`);
-  const slides = articles.slice(0, 5).map((article) => (
+  const slides = articles.map((article) => (
     <Carousel.Slide key={article.title}>
       <ImageCard article={article} height={500} showDescription={true} />
     </Carousel.Slide>

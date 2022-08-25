@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import AppNav from '../components/AppNav';
-import { CategoriesData, FooterLinks, NavLinks } from '../data';
+import { CategoriesData, FooterLinks } from '../data';
 import FooterSection from '../components/Footer';
 
 interface WrapperProps {
@@ -10,9 +10,9 @@ interface WrapperProps {
 const Wrapper = ({ children }: WrapperProps): JSX.Element => {
   return (
     <>
-      <AppNav user={NavLinks.user} tabs={CategoriesData.tabs} />
+      <AppNav links={CategoriesData.links} />
       {children}
-      <FooterSection data={FooterLinks.data}/>
+      <FooterSection data={FooterLinks.data} />
     </>
   );
 };

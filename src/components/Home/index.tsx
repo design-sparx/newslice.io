@@ -6,9 +6,14 @@ import { Grid } from '@mantine/core';
 import PopularSection from './Popular';
 import TrendingSection from './Trending';
 import RecentSection from './Recent';
+import CategoriesSection from './Categories';
 
 interface HomeProps {
-  articles: Article[];
+  feed: Article[];
+  headlines: Article[];
+  popular: Article[];
+  recent: Article[];
+  trending: Article[];
   totalResults: number;
   categories: Array<{
     title: string
@@ -16,23 +21,28 @@ interface HomeProps {
   }>;
 }
 
-const HomeSection = ({ articles, totalResults, categories }: HomeProps): JSX.Element => {
+const HomeSection = ({
+                       feed,
+                       headlines,
+                       popular,
+                       recent,
+                       trending,
+                       totalResults,
+                       categories,
+                     }: HomeProps): JSX.Element => {
+
   return (
     <div>
-      <FeedSection articles={articles} />
-      <Grid gutter="xl">
+      <FeedSection articles={feed} />
+      <Grid gutter='xl'>
         <Grid.Col lg={8}>
-          <HeadlinesSection articles={articles} />
-          <RecentSection articles={articles} />
-          {/* {categories.map(category =>
-            <div key={category.title}>
-              <CategoriesSection category={category.title} articles={category.articles} />
-            </div>,
-          )} */}
+          <HeadlinesSection articles={headlines} />
+          <CategoriesSection categories={categories} />
         </Grid.Col>
         <Grid.Col lg={4}>
-          <PopularSection articles={articles} />
-          <TrendingSection articles={articles} />
+          <PopularSection articles={popular} />
+          <TrendingSection articles={trending} />
+          <RecentSection articles={recent} />
         </Grid.Col>
       </Grid>
     </div>
