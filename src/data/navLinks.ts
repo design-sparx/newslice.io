@@ -1,8 +1,38 @@
 export const NavLinks = {
-  user: {
-    name: 'Jane Spoonfighter',
-    email: 'janspoon@fighter.dev',
-    image:
-      'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=255&q=80',
-  },
+  'userLinks': [
+    {
+      'link': '#',
+      'label': 'Privacy & Security',
+    },
+    {
+      'link': '#',
+      'label': 'Account settings',
+    },
+    {
+      'link': '#',
+      'label': 'Support options',
+    },
+  ],
+  'mainLinks': [
+    {
+      'link': '#',
+      'label': 'Book a demo',
+    },
+    {
+      'link': '#',
+      'label': 'Documentation',
+    },
+    {
+      'link': '#',
+      'label': 'Community',
+    },
+    {
+      'link': '#',
+      'label': 'Academy',
+    },
+    {
+      'link': '#',
+      'label': 'Forums',
+    },
+  ],
 };

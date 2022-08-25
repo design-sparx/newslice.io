@@ -17,19 +17,20 @@ interface TrendingProps {
   articles: Article[];
 }
 
-const TrendingSection = ({ articles }: TrendingProps) => {
+const TrendingSection = ({ articles }: TrendingProps): JSX.Element => {
   const { classes } = useStyles();
+
   return (
-    <Box mb="lg">
+    <Box mb='lg'>
       <Group className={classes.titleWrapper}>
         <Title order={3}>
           Trending articles
         </Title>
       </Group>
       <Divider className={classes.titleWrapper} />
-      <TextImageCard article={articles[15]} showDescription={false}/>
+      <TextImageCard article={articles[0]} showDescription={false} />
       <SimpleGrid cols={1} spacing='md' breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
-        {articles.slice(16, 20).map((article) => (
+        {articles.slice(1, 5).map((article) => (
           <HorizontalCard key={article.url} article={article} />
         ))}
       </SimpleGrid>

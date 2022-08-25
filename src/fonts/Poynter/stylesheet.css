@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'PoynterText';
+    src: url('PoynterText-SansBold.woff2') format('woff2'),
+        url('PoynterText-SansBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PoynterText';
+    src: url('PoynterText-SansBlack.woff2') format('woff2'),
+        url('PoynterText-SansBlack.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PoynterText';
+    src: url('PoynterText-Bold.woff2') format('woff2'),
+        url('PoynterText-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PoynterText';
+    src: url('PoynterText-SansLight.woff2') format('woff2'),
+        url('PoynterText-SansLight.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+

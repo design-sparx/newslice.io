@@ -47,7 +47,7 @@ const HorizontalCard = ({ article, size, showDescription }: ArticleCardVerticalP
     margin = 4;
   } else {
     imageDimensions = 90;
-    lineClamp = 3;
+    lineClamp = 2;
     margin = 12;
   }
 

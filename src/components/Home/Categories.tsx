@@ -1,50 +1,52 @@
 import React from 'react';
 import { Article } from '../../constants/articles';
-import { Button, createStyles, Divider, Group, MantineTheme, SimpleGrid, Title } from '@mantine/core';
+import { createStyles, SimpleGrid, Tabs } from '@mantine/core';
 import { TextImageCard } from '../ArticleCards';
 import TitleCard from '../ArticleCards/TitleCard';
 
-interface CategoriesProps {
-  articles: Article[];
-  category: string;
-}
-
-const useStyles = createStyles((theme: MantineTheme) => ({
-  wrapper: {
-    paddingTop: theme.spacing.xl * 3,
-    paddingBottom: theme.spacing.xl * 3,
-  },
-  titleWrapper: {
-    paddingBottom: theme.spacing.xl,
+const useStyles = createStyles((theme) => ({
+  tab: {
+    textTransform: 'capitalize',
   },
 }));
 
-const CategoriesSection = ({ category, articles }: CategoriesProps): JSX.Element => {
+interface CategoriesProps {
+  categories: Array<{
+    title: string
+    articles: Article[]
+  }>;
+}
+
+const CategoriesSection = ({ categories }: CategoriesProps): JSX.Element => {
   const { classes } = useStyles();
 
   return (
-    <div className={classes.wrapper}>
-      <Group className={classes.titleWrapper}>
-        <Title order={2}>
-          {category}
-        </Title>
-      </Group>
-      <Divider className={classes.titleWrapper} />
-      <TitleCard key={articles[0].url} article={articles[0]} imageHeight={300} />
-      <SimpleGrid cols={3} spacing='md' breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
-        {articles.slice(1, 4).map((article) => (
-          <TextImageCard key={article.url} article={article} showDescription/>
-        ))}
-      </SimpleGrid>
-      <Group>
-        <Button
-          component='a'
-          href=''
-        >
-          view more
-        </Button>
-      </Group>
-    </div>
+    <>
+      <Tabs defaultValue='general'>
+        <Tabs.List>
+          {categories.map(c =>
+            <Tabs.Tab
+              key={`cat-tab-${c.title}`}
+              value={c.title}
+              className={classes.tab}
+            >
+              {c.title}
+            </Tabs.Tab>)
+          }
+        </Tabs.List>
+
+        {categories.map(c =>
+          <Tabs.Panel key={`cat-pane-${c.title}`} value={c.title} pt='xs'>
+            <TitleCard article={c.articles[0]} imageHeight={300} />
+            <SimpleGrid cols={3} spacing='md' breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
+              {c.articles.slice(1, 10).map((article) => (
+                <TextImageCard key={article.url} article={article} showDescription />
+              ))}
+            </SimpleGrid>
+          </Tabs.Panel>,
+        )}
+      </Tabs>
+    </>
   );
 };
 
