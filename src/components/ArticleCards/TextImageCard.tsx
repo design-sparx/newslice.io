@@ -42,7 +42,7 @@ const TextImageCard = ({ className, article, size, showDescription }: ArticleCar
   Omit<React.ComponentPropsWithoutRef<'div'>, keyof ArticleCardProps>): JSX.Element => {
   const { classes, cx } = useStyles();
   const theme = useMantineTheme();
-  const { url, urlToImage, title, source, description, publishedAt } = article;
+  const { name, url, image, description, provider, datePublished } = article;
   const linkProps = { href: url, target: '_blank', rel: 'noopener noreferrer' };
   let imageDimensions: number,
     lineClamp: number,
@@ -65,8 +65,7 @@ const TextImageCard = ({ className, article, size, showDescription }: ArticleCar
   return (
     <Card className={cx(classes.card, className)}>
       <Card.Section>
-        {/* @ts-expect-error */}
-        <Image src={urlToImage} height={imageDimensions} radius='md' withPlaceholder />
+        <Image src={image?.thumbnail.contentUrl} height={imageDimensions} radius='md' withPlaceholder />
       </Card.Section>
 
       <Text
@@ -78,18 +77,18 @@ const TextImageCard = ({ className, article, size, showDescription }: ArticleCar
         size={size === Size.lg ? 'lg' : 'md'}
         {...linkProps}
       >
-        {title}
+        {name}
       </Text>
 
       <Group noWrap spacing='xs' className={classes.footer}>
         <Center>
           <IconNews size={14} stroke={1.5} color={theme.colors.dark[2]} />
-          <Text size='xs' color='dimmed' weight={700} ml={4}>{source.name}</Text>
+          <Text size='xs' color='dimmed' weight={700} ml={4}>{provider[0].name}</Text>
         </Center>
         <Text size='xs' color='dimmed'>-</Text>
         <Center>
           <IconCalendar size={14} stroke={1.5} color={theme.colors.dark[2]} />
-          <Text size='xs' color='dimmed' ml={4}>{new Date(publishedAt).toLocaleDateString()}</Text>
+          <Text size='xs' color='dimmed' ml={4}>{new Date(datePublished).toLocaleDateString()}</Text>
         </Center>
       </Group>
 

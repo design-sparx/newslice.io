@@ -1,14 +1,14 @@
 import React, { useRef } from 'react';
-import { Article } from '../../constants/articles';
 import { Carousel } from '@mantine/carousel';
 import { useMantineTheme } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import Autoplay from 'embla-carousel-autoplay';
 import { Size } from '../../constants/cardSizes';
-import { HorizontalCard } from '../ArticleCards';
+import { TrendingArticle } from '../../constants/trendingArticles';
+import TrendingCard from '../ArticleCards/TrendingCard';
 
 interface FeedProps {
-  articles: Article[];
+  articles: TrendingArticle[];
 }
 
 const FeedSection = ({ articles }: FeedProps): JSX.Element => {
@@ -17,8 +17,8 @@ const FeedSection = ({ articles }: FeedProps): JSX.Element => {
   const autoplay = useRef(Autoplay({ delay: 10000 }));
 
   const slides = articles.slice(0, 5).map((article) => (
-    <Carousel.Slide key={article.title}>
-      <HorizontalCard article={article} size={Size.sm} />
+    <Carousel.Slide key={article.webSearchUrl}>
+      <TrendingCard article={article} size={Size.sm} />
     </Carousel.Slide>
   ));
 

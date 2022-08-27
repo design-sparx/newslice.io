@@ -13,7 +13,7 @@ const HeadlinesSection = ({ articles }: HeadlinesProps): JSX.Element => {
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm}px)`);
   const slides = articles.map((article) => (
-    <Carousel.Slide key={article.title}>
+    <Carousel.Slide key={article.name}>
       <ImageCard article={article} height={500} showDescription={true} />
     </Carousel.Slide>
   ));

@@ -30,7 +30,7 @@ interface VerticalTextCardProps {
 const VerticalTextCard = ({ article, imageHeight }: VerticalTextCardProps): JSX.Element => {
   const { classes } = useStyles();
   const theme = useMantineTheme();
-  const { url, urlToImage, source, title, publishedAt,description } = article;
+  const { name, url, image, description, provider, datePublished } = article;
   return (
     <Card
       radius='md'
@@ -38,9 +38,9 @@ const VerticalTextCard = ({ article, imageHeight }: VerticalTextCardProps): JSX.
       className={classes.card}
     >
       <Grid align='center'>
-        {(urlToImage != null) &&
+        {(image != null) &&
           <Grid.Col lg={6}>
-            <Image src={urlToImage} height={imageHeight} radius='md' fit='cover' />
+            <Image src={image.thumbnail.contentUrl} height={imageHeight} radius='md' fit='cover' />
           </Grid.Col>
         }
         <Grid.Col lg={6}>
@@ -49,18 +49,18 @@ const VerticalTextCard = ({ article, imageHeight }: VerticalTextCardProps): JSX.
               className={classes.title}
               href={url}
             >
-              {title}
+              {name}
             </Anchor>
             <Text lineClamp={3} my='md'>{description}</Text>
             <Group noWrap spacing='xs'>
               <Center>
                 <IconNews size={14} stroke={1.5} color={theme.colors.dark[2]} />
-                <Text size='xs' color='dimmed' weight={700} ml={4}>{source.name}</Text>
+                <Text size='xs' color='dimmed' weight={700} ml={4}>{provider[0].name}</Text>
               </Center>
               <Text size='xs' color='dimmed'>-</Text>
               <Center>
                 <IconCalendar size={14} stroke={1.5} color={theme.colors.dark[2]} />
-                <Text size='xs' color='dimmed' ml={4}>{new Date(publishedAt).toLocaleDateString()}</Text>
+                <Text size='xs' color='dimmed' ml={4}>{new Date(datePublished).toLocaleDateString()}</Text>
               </Center>
             </Group>
           </div>

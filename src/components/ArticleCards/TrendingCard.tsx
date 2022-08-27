@@ -1,7 +1,6 @@
 import { createStyles, Card, Image, Text, Group, Center, useMantineTheme } from '@mantine/core';
-import { Article } from '../../constants/articles';
 import { Size } from '../../constants/cardSizes';
-import { IconCalendar, IconNews } from '@tabler/icons';
+import { TrendingArticle } from '../../constants/trendingArticles';
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -24,15 +23,15 @@ const useStyles = createStyles((theme) => ({
 }));
 
 interface ArticleCardVerticalProps {
-  article: Article;
+  article: TrendingArticle;
   size?: Size;
   showDescription?: boolean;
 }
 
-const HorizontalCard = ({ article, size, showDescription }: ArticleCardVerticalProps): JSX.Element => {
+const TrendingCard = ({ article, size, showDescription }: ArticleCardVerticalProps): JSX.Element => {
   const { classes } = useStyles();
   const theme = useMantineTheme();
-  const { name, url, image, description, provider, datePublished } = article;
+  const { name, image, webSearchUrl, query, isBreakingNews, newsSearchUrl } = article;
   let imageDimensions: number,
     lineClamp: number,
     margin: number;
@@ -59,7 +58,7 @@ const HorizontalCard = ({ article, size, showDescription }: ArticleCardVerticalP
       className={classes.card}
     >
       <Group noWrap spacing={0} align='start'>
-        <Image src={image?.thumbnail.contentUrl}
+        <Image src={image.url}
                height={imageDimensions}
                width={imageDimensions}
                radius='md'
@@ -70,26 +69,18 @@ const HorizontalCard = ({ article, size, showDescription }: ArticleCardVerticalP
           <Text
             className={classes.title}
             component='a'
-            href={url}
+            href={webSearchUrl}
+            target="_blank"
             lineClamp={lineClamp}
             mb={margin}
             size={size === Size.lg ? 'lg' : 'md'}
           >
-            {name}
+            {query.text}
           </Text>
-          <Group noWrap spacing='xs' mb='md'>
-            <Center>
-              <IconNews size={14} stroke={1.5} color={theme.colors.dark[2]} />
-              <Text size='xs' color='dimmed' weight={700} ml={4}>{provider[0].name}</Text>
-            </Center>
-            <Text size='xs' color='dimmed'>-</Text>
-            <Center>
-              <IconCalendar size={14} stroke={1.5} color={theme.colors.dark[2]} />
-              <Text size='xs' color='dimmed' ml={4}>{new Date(datePublished).toLocaleDateString()}</Text>
-            </Center>
-          </Group>
+          <Text size='xs' color='dimmed'>{name}</Text>
+          <Text size='xs' color='dimmed' weight={700}>{image.provider[0].name}</Text>
           {(showDescription === true) &&
-            <Text lineClamp={lineClamp}>{description}</Text>
+            <Text lineClamp={lineClamp}>{isBreakingNews}</Text>
           }
         </div>
       </Group>
@@ -97,4 +88,4 @@ const HorizontalCard = ({ article, size, showDescription }: ArticleCardVerticalP
   );
 };
 
-export default HorizontalCard;
+export default TrendingCard;

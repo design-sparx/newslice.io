@@ -5,14 +5,15 @@ import CategoriesSection from './Categories';
 
 interface HomeProps {
   headlines: Article[];
-  totalResults: number;
   categories: Array<{
     title: string
     articles: Article[]
-  }>;
+  }> | any;
 }
 
-const HomeSection = ({headlines, totalResults, categories }: HomeProps): JSX.Element => {
+const HomeSection = ({headlines, categories }: HomeProps): JSX.Element => {
+
+  console.log(headlines);
 
   return (
     <div>

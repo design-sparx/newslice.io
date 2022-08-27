@@ -70,7 +70,7 @@ interface ImageCardProps {
 
 const ImageCard = ({ article, height, showDescription }: ImageCardProps): JSX.Element => {
   const { classes, theme } = useStyles();
-  const { urlToImage, url, title, publishedAt, source, description } = article;
+  const { name, url, image, description, provider, datePublished } = article;
 
   return (
     <Card
@@ -84,13 +84,13 @@ const ImageCard = ({ article, height, showDescription }: ImageCardProps): JSX.El
       style={{ height }}
     >
       {/* eslint-disable-next-line @typescript-eslint/restrict-template-expressions */}
-      <div className={classes.image} style={{ backgroundImage: `url(${urlToImage})` }} />
+      <div className={classes.image} style={{ backgroundImage: `url(${image?.thumbnail.contentUrl})` }} />
       <div className={classes.overlay} />
 
       <div className={classes.content}>
         <div>
           <Title order={2} className={classes.title}>
-            {title}
+            {name}
           </Title>
 
           {(showDescription ?? false) &&
@@ -103,13 +103,13 @@ const ImageCard = ({ article, height, showDescription }: ImageCardProps): JSX.El
             <Center>
               <IconNews size={16} stroke={1.5} color={theme.colors.dark[2]} />
               <Text size='sm' className={classes.bodyText}>
-                {source.name}
+                {provider[0].name}
               </Text>
             </Center>
             <Center>
               <IconCalendar size={16} stroke={1.5} color={theme.colors.dark[2]} />
               <Text size='sm' className={classes.bodyText}>
-                {new Date(publishedAt).toLocaleDateString()}
+                {new Date(datePublished).toLocaleDateString()}
               </Text>
             </Center>
           </Group>

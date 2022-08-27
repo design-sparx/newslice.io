@@ -21,7 +21,7 @@ interface RecentProps {
 const RecentSection = ({ articles }: RecentProps) => {
   const { classes } = useStyles();
   return (
-    <Box mb="lg">
+    <Box mb='lg'>
       <Group className={classes.titleWrapper}>
         <Title order={3}>
           Recent posts

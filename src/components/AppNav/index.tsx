@@ -67,7 +67,7 @@ const useStyles = createStyles((theme) => ({
 
 interface AppNavProps {
   market?: Market;
-  maxMenuItems: number
+  maxMenuItems: number;
 }
 
 const AppNav = ({ market, maxMenuItems }: AppNavProps): JSX.Element => {
@@ -79,17 +79,16 @@ const AppNav = ({ market, maxMenuItems }: AppNavProps): JSX.Element => {
     if ((market != null) && market?.categories.length > maxMenuItems) {
       items = market.categories.slice(0, maxMenuItems).map((c) => {
         const menuItems = c.subCategories?.map((s) => (
-          <Menu.Item key={s.title}>{s.title}</Menu.Item>
+          <Menu.Item key={s.title} component='a' href={`/#/category/${s.title}`}>{s.title}</Menu.Item>
         ));
 
         if (menuItems != null) {
           return (
-            <Menu key={c.title} trigger="hover" exitTransitionDuration={0}>
+            <Menu key={c.title} trigger='hover' exitTransitionDuration={0}>
               <Menu.Target>
                 <a
-                  href={`/#/category${c.title}`}
+                  href={`/#/category/${c.title}`}
                   className={classes.link}
-                  onClick={(event) => event.preventDefault()}
                 >
                   <Center>
                     <span className={classes.linkLabel}>{c.title}</span>
@@ -105,7 +104,7 @@ const AppNav = ({ market, maxMenuItems }: AppNavProps): JSX.Element => {
         return (
           <a
             key={c.title}
-            href={`/#/category${c.title}`}
+            href={`/#/category/${c.title}`}
             className={classes.link}
           >
             {c.title}
@@ -114,17 +113,16 @@ const AppNav = ({ market, maxMenuItems }: AppNavProps): JSX.Element => {
       });
       overflow = market.categories.slice(maxMenuItems, market.categories.length - 1).map(c => {
         const menuItems = c.subCategories?.map((s) => (
-          <Menu.Item key={s.title}>{s.title}</Menu.Item>
+          <Menu.Item key={s.title} component='a' href={`/#/category/${s.title}`}>{s.title}</Menu.Item>
         ));
 
         if (menuItems != null) {
           return (
-            <Menu key={c.title} trigger="hover" exitTransitionDuration={0}>
+            <Menu key={c.title} trigger='hover' exitTransitionDuration={0}>
               <Menu.Target>
                 <a
-                  href={`/#/category${c.title}`}
+                  href={`/#/category/${c.title}`}
                   className={classes.link}
-                  onClick={(event) => event.preventDefault()}
                 >
                   <Group>
                     <span className={classes.linkLabel}>{c.title}</span>
@@ -138,7 +136,7 @@ const AppNav = ({ market, maxMenuItems }: AppNavProps): JSX.Element => {
         }
 
         return (
-          <Menu.Item key={c.title}>{c.title}</Menu.Item>
+          <Menu.Item key={c.title} component='a' href={`/#/category/${c.title}`}>{c.title}</Menu.Item>
         );
       });
     } else {
@@ -149,10 +147,10 @@ const AppNav = ({ market, maxMenuItems }: AppNavProps): JSX.Element => {
 
         if (menuItems != null) {
           return (
-            <Menu key={c.title} trigger="hover" exitTransitionDuration={0}>
+            <Menu key={c.title} trigger='hover' exitTransitionDuration={0}>
               <Menu.Target>
                 <a
-                  href={`/#/category${c.title}`}
+                  href={`/#/category/${c.title}`}
                   className={classes.link}
                   onClick={(event) => event.preventDefault()}
                 >
@@ -170,7 +168,7 @@ const AppNav = ({ market, maxMenuItems }: AppNavProps): JSX.Element => {
         return (
           <a
             key={c.title}
-            href={`/#/category${c.title}`}
+            href={`/#/category/${c.title}`}
             className={classes.link}
           >
             {c.title}
@@ -180,7 +178,7 @@ const AppNav = ({ market, maxMenuItems }: AppNavProps): JSX.Element => {
 
     return <>
       {items}
-      <Menu shadow='md' width={200} trigger="hover" exitTransitionDuration={0}>
+      <Menu shadow='md' width={200} trigger='hover' exitTransitionDuration={0}>
         <Menu.Target>
           <a className={classes.link}><IconDots size={14} /></a>
         </Menu.Target>
