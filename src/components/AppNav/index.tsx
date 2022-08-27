@@ -10,7 +10,7 @@ import {
   Tooltip,
   Button,
   Center,
-  Menu, useMantineTheme,
+  Menu,
 } from '@mantine/core';
 import { IconSearch, IconNews, IconBell, IconSettings, IconChevronDown, IconDots } from '@tabler/icons';
 import { Market } from '../../constants/market';
@@ -79,7 +79,6 @@ interface AppNavProps {
 
 const AppNav = ({ market, maxMenuItems }: AppNavProps): JSX.Element => {
   const { classes } = useStyles();
-  const theme = useMantineTheme();
 
   const menuHandler = (): JSX.Element => {
     let items: JSX.Element[] | undefined;
@@ -92,14 +91,14 @@ const AppNav = ({ market, maxMenuItems }: AppNavProps): JSX.Element => {
 
         if (menuItems != null) {
           return (
-            <Group spacing={0}>
+            <Group spacing={0} key={`nav-${c.title}`}>
               <a
                 href={`/#/category/${c.title}`}
                 className={classes.link}
               >
                 {c.title}
               </a>
-              <Menu key={c.title} trigger='hover' exitTransitionDuration={0}>
+              <Menu trigger='hover' exitTransitionDuration={0}>
                 <Menu.Target>
                   <ActionIcon className={classes.menuControl}>
                     <IconChevronDown size={12} />
@@ -113,7 +112,7 @@ const AppNav = ({ market, maxMenuItems }: AppNavProps): JSX.Element => {
 
         return (
           <a
-            key={c.title}
+            key={`nav-${c.title}`}
             href={`/#/category/${c.title}`}
             className={classes.link}
           >
@@ -123,19 +122,19 @@ const AppNav = ({ market, maxMenuItems }: AppNavProps): JSX.Element => {
       });
       overflow = market.categories.slice(maxMenuItems, market.categories.length - 1).map(c => {
         const menuItems = c.subCategories?.map((s) => (
-          <Menu.Item key={s.title} component='a' href={`/#/category/${s.title}`}>{s.title}</Menu.Item>
+          <Menu.Item key={`ov-${s.title}`} component='a' href={`/#/category/${s.title}`}>{s.title}</Menu.Item>
         ));
 
         if (menuItems != null) {
           return (
-            <Group spacing={0}>
+            <Group spacing={0} key={`nav-${c.title}`}>
               <a
                 href={`/#/category/${c.title}`}
                 className={classes.link}
               >
                 {c.title}
               </a>
-              <Menu key={c.title} trigger='hover' exitTransitionDuration={0}>
+              <Menu key={`menu-${c.title}`} trigger='hover' exitTransitionDuration={0}>
                 <Menu.Target>
                   <ActionIcon className={classes.menuControl}>
                     <IconChevronDown size={12} />
@@ -148,7 +147,7 @@ const AppNav = ({ market, maxMenuItems }: AppNavProps): JSX.Element => {
         }
 
         return (
-          <Menu.Item key={c.title} component='a' href={`/#/category/${c.title}`}>{c.title}</Menu.Item>
+          <Menu.Item key={`nav-${c.title}`} component='a' href={`/#/category/${c.title}`}>{c.title}</Menu.Item>
         );
       });
     } else {
@@ -159,7 +158,7 @@ const AppNav = ({ market, maxMenuItems }: AppNavProps): JSX.Element => {
 
         if (menuItems != null) {
           return (
-            <Menu key={c.title} trigger='hover' exitTransitionDuration={0}>
+            <Menu trigger='hover' exitTransitionDuration={0}>
               <Menu.Target>
                 <a
                   href={`/#/category/${c.title}`}

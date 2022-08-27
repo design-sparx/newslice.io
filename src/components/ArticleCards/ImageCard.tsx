@@ -1,5 +1,4 @@
-import { IconCalendar, IconNews } from '@tabler/icons';
-import { Card, Center, createStyles, Group, Text, Title } from '@mantine/core';
+import { Avatar, Card, Center, createStyles, Group, Text, Title } from '@mantine/core';
 import { Article } from '../../constants/articles';
 
 const useStyles = createStyles((theme, _params, getRef) => {
@@ -49,15 +48,19 @@ const useStyles = createStyles((theme, _params, getRef) => {
     title: {
       color: theme.white,
       marginBottom: theme.spacing.md,
+
+      '&:hover': {
+        textDecoration: 'underline',
+      },
+    },
+
+    description: {
+      color: theme.white,
+      marginBottom: theme.spacing.md,
     },
 
     bodyText: {
-      color: theme.colors.dark[2],
-      marginLeft: 7,
-    },
-
-    author: {
-      color: theme.colors.dark[2],
+      color: theme.white,
     },
   };
 });
@@ -69,7 +72,7 @@ interface ImageCardProps {
 }
 
 const ImageCard = ({ article, height, showDescription }: ImageCardProps): JSX.Element => {
-  const { classes, theme } = useStyles();
+  const { classes } = useStyles();
   const { name, url, image, description, provider, datePublished } = article;
 
   return (
@@ -94,21 +97,18 @@ const ImageCard = ({ article, height, showDescription }: ImageCardProps): JSX.El
           </Title>
 
           {(showDescription ?? false) &&
-            <Text size='sm' className={classes.title} lineClamp={2}>
+            <Text size='sm' className={classes.description} lineClamp={2}>
               {description}
             </Text>
           }
 
           <Group position='apart' spacing='xs'>
             <Center>
-              <IconNews size={16} stroke={1.5} color={theme.colors.dark[2]} />
-              <Text size='sm' className={classes.bodyText}>
-                {provider[0].name}
-              </Text>
+              <Avatar src={provider[0].image?.thumbnail.contentUrl} />
+              <Text size='sm' color='dimmed' weight={500} ml={4} className={classes.bodyText}>{provider[0].name}</Text>
             </Center>
             <Center>
-              <IconCalendar size={16} stroke={1.5} color={theme.colors.dark[2]} />
-              <Text size='sm' className={classes.bodyText}>
+              <Text size='sm' className={classes.bodyText} ml={4}>
                 {new Date(datePublished).toLocaleDateString()}
               </Text>
             </Center>

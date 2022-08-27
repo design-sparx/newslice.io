@@ -1,6 +1,5 @@
-import { createStyles, Card, Image, Text, Group, Grid, Anchor, Center, useMantineTheme } from '@mantine/core';
+import { createStyles, Card, Image, Text, Group, Grid, Anchor, Center, Avatar } from '@mantine/core';
 import { Article } from '../../constants/articles';
-import { IconCalendar, IconNews } from '@tabler/icons';
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -15,6 +14,11 @@ const useStyles = createStyles((theme) => ({
     lineHeight: 1.2,
     color: theme.black,
     fontSize: theme.fontSizes.xl,
+
+    '&:hover': {
+      color: theme.primaryColor,
+      textDecoration: 'underline',
+    },
   },
 
   body: {
@@ -29,7 +33,6 @@ interface VerticalTextCardProps {
 
 const VerticalTextCard = ({ article, imageHeight }: VerticalTextCardProps): JSX.Element => {
   const { classes } = useStyles();
-  const theme = useMantineTheme();
   const { name, url, image, description, provider, datePublished } = article;
   return (
     <Card
@@ -54,12 +57,11 @@ const VerticalTextCard = ({ article, imageHeight }: VerticalTextCardProps): JSX.
             <Text lineClamp={3} my='md'>{description}</Text>
             <Group noWrap spacing='xs'>
               <Center>
-                <IconNews size={14} stroke={1.5} color={theme.colors.dark[2]} />
-                <Text size='xs' color='dimmed' weight={700} ml={4}>{provider[0].name}</Text>
+                <Avatar size='sm' src={provider[0].image?.thumbnail.contentUrl} />
+                <Text size='xs' color='dimmed' weight={500} ml={4}>{provider[0].name}</Text>
               </Center>
               <Text size='xs' color='dimmed'>-</Text>
               <Center>
-                <IconCalendar size={14} stroke={1.5} color={theme.colors.dark[2]} />
                 <Text size='xs' color='dimmed' ml={4}>{new Date(datePublished).toLocaleDateString()}</Text>
               </Center>
             </Group>

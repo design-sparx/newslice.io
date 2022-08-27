@@ -162,7 +162,6 @@ const Category = (): JSX.Element => {
                   key={article.url}
                   article={article}
                   size={Size.md}
-                  showDescription
                 />
               ))}
             </SimpleGrid>

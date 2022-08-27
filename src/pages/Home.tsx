@@ -7,10 +7,7 @@ const Home = (): JSX.Element => {
   return (
     <div>
       <Wrapper showFeed>
-        <HomeSection
-          headlines={GeneralArticles.value}
-          categories={[]}
-        />
+        <HomeSection headlines={GeneralArticles.value} />
       </Wrapper>
     </div>
   );

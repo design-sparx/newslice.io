@@ -1,4 +1,4 @@
-import { createStyles, Card, Image, Text, Group, Center, useMantineTheme } from '@mantine/core';
+import { createStyles, Card, Image, Text, Group } from '@mantine/core';
 import { Size } from '../../constants/cardSizes';
 import { TrendingArticle } from '../../constants/trendingArticles';
 
@@ -12,6 +12,11 @@ const useStyles = createStyles((theme) => ({
   title: {
     fontWeight: 500,
     lineHeight: 1.2,
+
+    '&:hover': {
+      color: theme.primaryColor,
+      textDecoration: 'underline',
+    },
   },
 
   body: {
@@ -30,8 +35,7 @@ interface ArticleCardVerticalProps {
 
 const TrendingCard = ({ article, size, showDescription }: ArticleCardVerticalProps): JSX.Element => {
   const { classes } = useStyles();
-  const theme = useMantineTheme();
-  const { name, image, webSearchUrl, query, isBreakingNews, newsSearchUrl } = article;
+  const { name, image, webSearchUrl, query, isBreakingNews } = article;
   let imageDimensions: number,
     lineClamp: number,
     margin: number;
@@ -78,7 +82,7 @@ const TrendingCard = ({ article, size, showDescription }: ArticleCardVerticalPro
             {query.text}
           </Text>
           <Text size='xs' color='dimmed'>{name}</Text>
-          <Text size='xs' color='dimmed' weight={700}>{image.provider[0].name}</Text>
+          <Text size='xs' color='dimmed' weight={500}>{image.provider[0].name}</Text>
           {(showDescription === true) &&
             <Text lineClamp={lineClamp}>{isBreakingNews}</Text>
           }
