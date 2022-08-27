@@ -10,7 +10,7 @@ import {
   Tooltip,
   Button,
   Center,
-  Menu,
+  Menu, useMantineTheme,
 } from '@mantine/core';
 import { IconSearch, IconNews, IconBell, IconSettings, IconChevronDown, IconDots } from '@tabler/icons';
 import { Market } from '../../constants/market';
@@ -59,10 +59,17 @@ const useStyles = createStyles((theme) => ({
       backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
     },
   },
+
   linkLabel: {
     marginRight: 5,
   },
 
+  menuControl: {
+    borderTopLeftRadius: 0,
+    borderBottomLeftRadius: 0,
+    border: 0,
+    borderLeft: `1px solid ${theme.colors.gray[1]}`,
+  },
 }));
 
 interface AppNavProps {
@@ -72,9 +79,10 @@ interface AppNavProps {
 
 const AppNav = ({ market, maxMenuItems }: AppNavProps): JSX.Element => {
   const { classes } = useStyles();
+  const theme = useMantineTheme();
 
-  const menuHandler = () => {
-    let items: any = <></>;
+  const menuHandler = (): JSX.Element => {
+    let items: JSX.Element[] | undefined;
     let overflow: any = <></>;
     if ((market != null) && market?.categories.length > maxMenuItems) {
       items = market.categories.slice(0, maxMenuItems).map((c) => {
@@ -84,20 +92,22 @@ const AppNav = ({ market, maxMenuItems }: AppNavProps): JSX.Element => {
 
         if (menuItems != null) {
           return (
-            <Menu key={c.title} trigger='hover' exitTransitionDuration={0}>
-              <Menu.Target>
-                <a
-                  href={`/#/category/${c.title}`}
-                  className={classes.link}
-                >
-                  <Center>
-                    <span className={classes.linkLabel}>{c.title}</span>
-                    <IconChevronDown size={12} stroke={1.5} />
-                  </Center>
-                </a>
-              </Menu.Target>
-              <Menu.Dropdown>{menuItems}</Menu.Dropdown>
-            </Menu>
+            <Group spacing={0}>
+              <a
+                href={`/#/category/${c.title}`}
+                className={classes.link}
+              >
+                {c.title}
+              </a>
+              <Menu key={c.title} trigger='hover' exitTransitionDuration={0}>
+                <Menu.Target>
+                  <ActionIcon className={classes.menuControl}>
+                    <IconChevronDown size={12} />
+                  </ActionIcon>
+                </Menu.Target>
+                <Menu.Dropdown>{menuItems}</Menu.Dropdown>
+              </Menu>
+            </Group>
           );
         }
 
@@ -118,20 +128,22 @@ const AppNav = ({ market, maxMenuItems }: AppNavProps): JSX.Element => {
 
         if (menuItems != null) {
           return (
-            <Menu key={c.title} trigger='hover' exitTransitionDuration={0}>
-              <Menu.Target>
-                <a
-                  href={`/#/category/${c.title}`}
-                  className={classes.link}
-                >
-                  <Group>
-                    <span className={classes.linkLabel}>{c.title}</span>
-                    <IconChevronDown size={12} stroke={1.5} />
-                  </Group>
-                </a>
-              </Menu.Target>
-              <Menu.Dropdown>{menuItems}</Menu.Dropdown>
-            </Menu>
+            <Group spacing={0}>
+              <a
+                href={`/#/category/${c.title}`}
+                className={classes.link}
+              >
+                {c.title}
+              </a>
+              <Menu key={c.title} trigger='hover' exitTransitionDuration={0}>
+                <Menu.Target>
+                  <ActionIcon className={classes.menuControl}>
+                    <IconChevronDown size={12} />
+                  </ActionIcon>
+                </Menu.Target>
+                <Menu.Dropdown>{menuItems}</Menu.Dropdown>
+              </Menu>
+            </Group>
           );
         }
 
