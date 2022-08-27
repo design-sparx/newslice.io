@@ -12,7 +12,7 @@ import {
   HeadlinesCategoryScience,
   HeadlinesCategorySports,
   HeadlinesCategoryTechnology,
-} from '../data';
+} from '../data/NewsApiOrg';
 import { TextImageCard } from '../components/ArticleCards';
 import { Size } from '../constants/cardSizes';
 

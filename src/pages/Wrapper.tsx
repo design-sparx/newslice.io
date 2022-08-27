@@ -1,12 +1,14 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useEffect, useState } from 'react';
 import AppNav from '../components/AppNav';
-import { CategoriesData, FooterLinks, HeadlinesCategoryGeneral, HeadlinesCountryData } from '../data';
+import { FooterLinks, HeadlinesCategoryGeneral, HeadlinesCountryData } from '../data/NewsApiOrg';
 import FooterSection from '../components/Footer';
 import { Container, createStyles, Grid, MantineTheme } from '@mantine/core';
 import PopularSection from '../components/Home/Popular';
 import TrendingSection from '../components/Home/Trending';
 import RecentSection from '../components/Home/Recent';
 import FeedSection from '../components/Home/Feeds';
+import Markets from '../data/BingNews/markets.json';
+import { Market } from '../constants/market';
 
 interface WrapperProps {
   children: ReactNode;
@@ -22,11 +24,16 @@ const useStyles = createStyles((theme: MantineTheme) => ({
 }));
 
 const Wrapper = ({ children, showFeed }: WrapperProps): JSX.Element => {
+  const [market, setMarket] = useState<Market>();
   const { classes } = useStyles();
+
+  useEffect(() => {
+    Markets.markets.forEach(mkt => mkt.iso === 'en-US' && setMarket(mkt));
+  }, [Markets]);
 
   return (
     <>
-      <AppNav links={CategoriesData.links} />
+      <AppNav market={market} maxMenuItems={8}/>
       <Container fluid className={classes.container}>
         {(showFeed === true) &&
           <FeedSection articles={HeadlinesCategoryGeneral.articles.slice(0, 10)} />

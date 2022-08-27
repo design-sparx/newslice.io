@@ -1,0 +1,346 @@
+{
+  "_type": "News",
+  "webSearchUrl": "https:\/\/www.bing.com\/news\/search?q=us+news&form=TNSA02",
+  "value": [
+    {
+      "_type": "NewsArticle",
+      "name": "Mar-a-Lago affidavit reveals FBI expected to find evidence of multiple federal crimes if it could search Trump's club and private residence in South Florida",
+      "url": "https:\/\/www.msn.com\/en-us\/news\/politics\/mar-a-lago-affidavit-reveals-fbi-expected-to-find-evidence-of-multiple-federal-crimes-if-it-could-search-trump-s-club-and-private-residence-in-south-florida\/ar-AA118vCU",
+      "image": {
+        "_type": "ImageObject",
+        "thumbnail": {
+          "_type": "ImageObject",
+          "contentUrl": "https:\/\/www.bing.com\/th?id=OVFT.z50K6Hkozjz4VmUK75kfZy&pid=News",
+          "width": 1200,
+          "height": 630
+        },
+        "isLicensed": true
+      },
+      "description": "The feds released a heavily-redacted version of the affidavit that backed up the FBI search of former President Donald Trump's home on August 8.",
+      "provider": [
+        {
+          "_type": "Organization",
+          "name": "Business Insider",
+          "image": {
+            "_type": "ImageObject",
+            "thumbnail": {
+              "_type": "ImageObject",
+              "contentUrl": "https:\/\/www.bing.com\/th?id=ODF.q-ZVWyz-qFnnPRsNgOLlfQ&pid=news"
+            }
+          }
+        }
+      ],
+      "datePublished": "2022-08-26T18:11:00.0000000Z"
+    },
+    {
+      "_type": "NewsArticle",
+      "name": "Baby boy died when mom, boyfriend gave him fentanyl to calm him down, DA says",
+      "url": "https:\/\/www.msn.com\/en-us\/news\/crime\/baby-boy-died-when-mom-boyfriend-gave-him-fentanyl-to-calm-him-down-da-says\/ar-AA118RJN",
+      "image": {
+        "_type": "ImageObject",
+        "thumbnail": {
+          "_type": "ImageObject",
+          "contentUrl": "https:\/\/www.bing.com\/th?id=OVFT.FKJwUjfQN5vgtxP5ebT_Wy&pid=News",
+          "width": 600,
+          "height": 315
+        },
+        "isLicensed": true
+      },
+      "description": "The mother of an 11-month-old boy and her boyfriend accidentally gave the boy a fatal dose of fentanyl in an attempt to calm the baby down, according to the DA. The baby boy ingested the fatal dose",
+      "provider": [
+        {
+          "_type": "Organization",
+          "name": "Syracuse.com",
+          "image": {
+            "_type": "ImageObject",
+            "thumbnail": {
+              "_type": "ImageObject",
+              "contentUrl": "https:\/\/www.bing.com\/th?id=ODF.ECMDmspjY-IWFTP2c1up4w&pid=news"
+            }
+          }
+        }
+      ],
+      "datePublished": "2022-08-26T18:09:00.0000000Z"
+    },
+    {
+      "_type": "NewsArticle",
+      "name": "Texas' social studies lessons were praised as inclusive. Conservative activists say it's CRT",
+      "url": "https:\/\/www.msn.com\/en-us\/news\/us\/texas-social-studies-lessons-were-praised-as-inclusive-conservative-activists-say-its-crt\/ar-AA118vZ4",
+      "image": {
+        "_type": "ImageObject",
+        "thumbnail": {
+          "_type": "ImageObject",
+          "contentUrl": "https:\/\/www.bing.com\/th?id=OVFT.hdKRSIAwJPiwVPuwXvF9LS&pid=News",
+          "width": 1200,
+          "height": 630
+        },
+        "isLicensed": true
+      },
+      "description": "Conservative education activists are accusing the Republican-controlled State Board of Education of helping liberals smuggle bits of Critical Race Theory into social studies standards that were",
+      "provider": [
+        {
+          "_type": "Organization",
+          "name": "Houston Chronicle",
+          "image": {
+            "_type": "ImageObject",
+            "thumbnail": {
+              "_type": "ImageObject",
+              "contentUrl": "https:\/\/www.bing.com\/th?id=ODF.PQRFkRxy512-QD57XWarCw&pid=news"
+            }
+          }
+        }
+      ],
+      "datePublished": "2022-08-26T16:44:00.0000000Z"
+    },
+    {
+      "_type": "NewsArticle",
+      "name": "Mar-a-Lago affidavit: 184 classified documents recovered in January",
+      "url": "https:\/\/www.msn.com\/en-us\/news\/us\/affidavit-to-search-trump-e2-80-99s-mar-a-lago-says-184-classified-files-found-in-january\/ar-AA118vGY",
+      "image": {
+        "_type": "ImageObject",
+        "thumbnail": {
+          "_type": "ImageObject",
+          "contentUrl": "https:\/\/www.bing.com\/th?id=OVFT.Q4pyBYMS0SS1MwntLrRhgS&pid=News",
+          "width": 1200,
+          "height": 630
+        },
+        "isLicensed": true
+      },
+      "description": "Court filing says many witnesses have been interviewed by the FBI; some classified papers sent to the National Archives in January appear to contain Trump’s handwritten notes.",
+      "provider": [
+        {
+          "_type": "Organization",
+          "name": "The Washington Post",
+          "image": {
+            "_type": "ImageObject",
+            "thumbnail": {
+              "_type": "ImageObject",
+              "contentUrl": "https:\/\/www.bing.com\/th?id=ODF.JRpbjhQKSgfe9BXmFtAAoA&pid=news"
+            }
+          }
+        }
+      ],
+      "datePublished": "2022-08-26T16:29:00.0000000Z"
+    },
+    {
+      "_type": "NewsArticle",
+      "name": "Columbus Education Association to meet at Huntington Park for contract vote",
+      "url": "https:\/\/www.msn.com\/en-us\/news\/us\/columbus-education-association-to-meet-at-huntington-park-for-contract-vote\/ar-AA118Pcx",
+      "image": {
+        "_type": "ImageObject",
+        "thumbnail": {
+          "_type": "ImageObject",
+          "contentUrl": "https:\/\/www.bing.com\/th?id=OVFT.56Cg11CtWY8xv-UAVCltOC&pid=News",
+          "width": 1200,
+          "height": 630
+        },
+        "isLicensed": true
+      },
+      "description": "Columbus Education Association members will meet Sunday at 4:30 p.m. at Huntington Park to learn details of the conceptual agreement and vote.",
+      "provider": [
+        {
+          "_type": "Organization",
+          "name": "The Columbus Dispatch",
+          "image": {
+            "_type": "ImageObject",
+            "thumbnail": {
+              "_type": "ImageObject",
+              "contentUrl": "https:\/\/www.bing.com\/th?id=ODF.KP829XFqAasxTQDcrklyvw&pid=news"
+            }
+          }
+        }
+      ],
+      "datePublished": "2022-08-26T18:04:00.0000000Z"
+    },
+    {
+      "_type": "NewsArticle",
+      "name": "Texas can’t bar adults under 21 from carrying handguns, federal judge rules",
+      "url": "https:\/\/www.msn.com\/en-us\/news\/us\/texas-can-e2-80-99t-bar-adults-under-21-from-carrying-handguns-federal-judge-rules\/ar-AA118Jvo",
+      "image": {
+        "_type": "ImageObject",
+        "thumbnail": {
+          "_type": "ImageObject",
+          "contentUrl": "https:\/\/www.bing.com\/th?id=OVFT.Yhke7YxFwALEMwAqaWHY4S&pid=News",
+          "width": 1200,
+          "height": 630
+        },
+        "isLicensed": true
+      },
+      "description": "The ruling could further loosen gun restrictions in Texas, where lawmakers have expanded gun access amid a spate of deadly mass shootings in recent years.",
+      "provider": [
+        {
+          "_type": "Organization",
+          "name": "The Washington Post",
+          "image": {
+            "_type": "ImageObject",
+            "thumbnail": {
+              "_type": "ImageObject",
+              "contentUrl": "https:\/\/www.bing.com\/th?id=ODF.JRpbjhQKSgfe9BXmFtAAoA&pid=news"
+            }
+          }
+        }
+      ],
+      "datePublished": "2022-08-26T16:08:00.0000000Z"
+    },
+    {
+      "_type": "NewsArticle",
+      "name": "Severe thunderstorm watch issued for most of Massachusetts as afternoon storms pass through",
+      "url": "https:\/\/www.msn.com\/en-us\/weather\/topstories\/severe-thunderstorm-watch-issued-for-most-of-massachusetts-as-afternoon-storms-pass-through\/ar-AA118Rwo",
+      "description": "Weather officials early Friday afternoon issued a severe thunderstorm watch for most of Massachusetts, warning that a line of powerful storms bearing sheets of rain and heavy winds would steadily",
+      "provider": [
+        {
+          "_type": "Organization",
+          "name": "MassLive.com",
+          "image": {
+            "_type": "ImageObject",
+            "thumbnail": {
+              "_type": "ImageObject",
+              "contentUrl": "https:\/\/www.bing.com\/th?id=ODF.KDaKm3KxrYAvNUXLp-n40w&pid=news"
+            }
+          }
+        }
+      ],
+      "datePublished": "2022-08-26T17:44:00.0000000Z"
+    },
+    {
+      "_type": "NewsArticle",
+      "name": "Q&A: The new COVID vaccine booster is coming. Should you get it?",
+      "url": "https:\/\/www.msn.com\/en-us\/health\/medical\/qanda-the-new-covid-vaccine-booster-is-coming-should-you-get-it\/ar-AA118u9J",
+      "description": "The COVID vaccine is getting an upgrade. For two years, we’ve been protecting ourselves with a vaccine modeled after the original version of the virus. But soon after Labor Day, a new booster – call",
+      "provider": [
+        {
+          "_type": "Organization",
+          "name": "Mercury News",
+          "image": {
+            "_type": "ImageObject",
+            "thumbnail": {
+              "_type": "ImageObject",
+              "contentUrl": "https:\/\/www.bing.com\/th?id=ODF.2qM2vPURQLJ_7VRkMVbBaQ&pid=news"
+            }
+          }
+        }
+      ],
+      "datePublished": "2022-08-26T14:28:00.0000000Z"
+    },
+    {
+      "_type": "NewsArticle",
+      "name": "‘I feel good about this year’: Baltimore-area schools resume classes amid staffing concerns, new masking rules",
+      "url": "https:\/\/www.msn.com\/en-us\/news\/us\/i-feel-good-about-this-year-baltimore-area-schools-resume-classes-amid-staffing-concerns-new-masking-rules\/ar-AA117JPn",
+      "image": {
+        "_type": "ImageObject",
+        "thumbnail": {
+          "_type": "ImageObject",
+          "contentUrl": "https:\/\/www.bing.com\/th?id=OVFT.DwTLi5t5hDy9GuqbVTq9yC&pid=News",
+          "width": 1200,
+          "height": 630
+        },
+        "isLicensed": true
+      },
+      "description": "Pencils were freshly sharpened and whiteboards wiped clean as Baltimore-area educators readied their classrooms for students ahead of the coming school year. Baltimore City schools CEO Sonja",
+      "provider": [
+        {
+          "_type": "Organization",
+          "name": "Baltimore Sun",
+          "image": {
+            "_type": "ImageObject",
+            "thumbnail": {
+              "_type": "ImageObject",
+              "contentUrl": "https:\/\/www.bing.com\/th?id=ODF.M9GXSLPIQGp0PH0Q6ZcjjQ&pid=news"
+            }
+          }
+        }
+      ],
+      "datePublished": "2022-08-26T10:13:00.0000000Z"
+    },
+    {
+      "_type": "NewsArticle",
+      "name": "Live high school football updates from Friday’s slate of Week 1 games",
+      "url": "https:\/\/www.msn.com\/en-us\/sports\/ncaafb\/live-high-school-football-updates-from-friday-s-slate-of-week-1-games\/ar-AA118UwT",
+      "image": {
+        "_type": "ImageObject",
+        "thumbnail": {
+          "_type": "ImageObject",
+          "contentUrl": "https:\/\/www.bing.com\/th?id=OVFT.KamMCqseSSm-GJEueZs-KC&pid=News",
+          "width": 600,
+          "height": 315
+        },
+        "isLicensed": true
+      },
+      "description": "Week 1 of the 2022 high school football season in Michigan is a two-day event. While many teams kicked off Thursday, many more games await Friday. Follow along with MLive tonight for score updates",
+      "provider": [
+        {
+          "_type": "Organization",
+          "name": "MLive - GrandRapids\/Muskegon\/Kalamazoo",
+          "image": {
+            "_type": "ImageObject",
+            "thumbnail": {
+              "_type": "ImageObject",
+              "contentUrl": "https:\/\/www.bing.com\/th?id=ODF.eg4eFcGE721NLPTPB7VpwA&pid=news"
+            }
+          }
+        }
+      ],
+      "datePublished": "2022-08-26T18:28:00.0000000Z"
+    },
+    {
+      "_type": "NewsArticle",
+      "name": "Takeaways from the redacted affidavit used for the Mar-a-Lago search",
+      "url": "https:\/\/www.msn.com\/en-us\/news\/politics\/takeaways-from-the-redacted-affidavit-used-for-the-mar-a-lago-search\/ar-AA118Ngm",
+      "image": {
+        "_type": "ImageObject",
+        "thumbnail": {
+          "_type": "ImageObject",
+          "contentUrl": "https:\/\/www.bing.com\/th?id=OVFT.uyyvNq7gdsbiwrXjFsZJ4y&pid=News",
+          "width": 1200,
+          "height": 630
+        },
+        "isLicensed": true
+      },
+      "description": "The largest piece of the puzzle about why FBI agents searched former president Donald Trump’s residence is out: the affidavit submitted to warrant the search. In its full form, this usually sealed",
+      "provider": [
+        {
+          "_type": "Organization",
+          "name": "The Washington Post",
+          "image": {
+            "_type": "ImageObject",
+            "thumbnail": {
+              "_type": "ImageObject",
+              "contentUrl": "https:\/\/www.bing.com\/th?id=ODF.JRpbjhQKSgfe9BXmFtAAoA&pid=news"
+            }
+          }
+        }
+      ],
+      "datePublished": "2022-08-26T17:26:00.0000000Z"
+    },
+    {
+      "_type": "NewsArticle",
+      "name": "Strike averted: 2,000 Philly schools workers have a new contract, raises, more training",
+      "url": "https:\/\/www.msn.com\/en-us\/news\/us\/strike-averted-2-000-philly-schools-workers-have-a-new-contract-raises-more-training\/ar-AA118WOM",
+      "image": {
+        "_type": "ImageObject",
+        "thumbnail": {
+          "_type": "ImageObject",
+          "contentUrl": "https:\/\/www.bing.com\/th?id=OVFT.WRyqp15BOEhCbEsfLuYvtS&pid=News",
+          "width": 1200,
+          "height": 630
+        },
+        "isLicensed": true
+      },
+      "description": "The Philadelphia School District and a union representing 2,000 bus drivers, cleaners and trades workers have a tentative contract. The deal, which would give the members of 32BJ SEIU Local 1201",
+      "provider": [
+        {
+          "_type": "Organization",
+          "name": "Philadelphia Inquirer",
+          "image": {
+            "_type": "ImageObject",
+            "thumbnail": {
+              "_type": "ImageObject",
+              "contentUrl": "https:\/\/www.bing.com\/th?id=ODF.j0tLhjVyX03_Nppeqnk7DA&pid=news"
+            }
+          }
+        }
+      ],
+      "datePublished": "2022-08-26T18:36:00.0000000Z"
+    }
+  ]
+}

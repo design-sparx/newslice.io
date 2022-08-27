@@ -12,7 +12,7 @@ import {
   HeadlinesCategorySports,
   HeadlinesCategoryTechnology,
   HeadlinesCountryData,
-} from '../data';
+} from '../data/NewsApiOrg';
 
 interface ICategories {
   title: string;
