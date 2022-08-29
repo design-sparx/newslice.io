@@ -12,7 +12,10 @@ const useStyles = createStyles((theme, _params, getRef) => {
       [`&:hover .${image}`]: {
         transform: 'scale(1.03)',
       },
-      textAlign: 'left',
+
+      '&:hover .mantine-Title-root': {
+        textDecoration: 'underline'
+      }
     },
 
     image: {
@@ -48,10 +51,6 @@ const useStyles = createStyles((theme, _params, getRef) => {
     title: {
       color: theme.white,
       marginBottom: theme.spacing.md,
-
-      '&:hover': {
-        textDecoration: 'underline',
-      },
     },
 
     description: {

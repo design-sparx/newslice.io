@@ -1,14 +1,13 @@
 import {
   createStyles,
   Header,
-  Autocomplete,
+  Input,
   Group,
   Text,
   Divider,
   Container,
   ActionIcon,
   Tooltip,
-  Button,
   Center,
   Menu,
 } from '@mantine/core';
@@ -40,6 +39,8 @@ const useStyles = createStyles((theme) => ({
 
   search: {
     width: 500,
+    background: 'transparent',
+
     [theme.fn.smallerThan('xs')]: {
       display: 'none',
     },
@@ -78,7 +79,7 @@ interface AppNavProps {
 }
 
 const AppNav = ({ market, maxMenuItems }: AppNavProps): JSX.Element => {
-  const { classes } = useStyles();
+  const { classes, cx } = useStyles();
 
   const menuHandler = (): JSX.Element => {
     let items: JSX.Element[] | undefined;
@@ -202,18 +203,17 @@ const AppNav = ({ market, maxMenuItems }: AppNavProps): JSX.Element => {
   };
 
   return (
-    <Header className={classes.header} mb={30} height='100%'>
+    <Header className={cx(classes.header, 'Nav-Bg')} mb={30} height='100%'>
       <div className={classes.inner}>
         <Group>
           <IconNews size={24} />
           <Text size='lg' transform='uppercase' weight={700}>Newslice</Text>
         </Group>
         <Group>
-          <Autocomplete
-            className={classes.search}
+          <Input
+            className={cx(classes.search, 'Input-Bg')}
             placeholder='Search'
             icon={<IconSearch size={16} stroke={1.5} />}
-            data={['React', 'Angular', 'Vue', 'Next.js', 'Riot.js', 'Svelte', 'Blitz.js']}
           />
         </Group>
         <Group>
@@ -231,15 +231,13 @@ const AppNav = ({ market, maxMenuItems }: AppNavProps): JSX.Element => {
       </div>
       <Container fluid className={classes.inner} mt='md'>
         <Group spacing='xs' className={classes.links}>
-          <Button
+          <a
             key={'home'}
-            component='a'
             href='/#/'
             className={classes.link}
-            variant='subtle'
           >
             home
-          </Button>
+          </a>
           <Divider orientation='vertical' />
           {menuHandler()}
         </Group>

@@ -104,7 +104,7 @@ interface FooterProps {
 }
 
 const FooterSection = ({ data }: FooterProps): JSX.Element => {
-  const { classes } = useStyles();
+  const { classes, cx } = useStyles();
 
   const groups = data.map((group) => {
     const links = group.links.map((link, index) => (
@@ -128,7 +128,7 @@ const FooterSection = ({ data }: FooterProps): JSX.Element => {
   });
 
   return (
-    <footer className={classes.footer}>
+    <footer className={cx(classes.footer, 'Nav-Bg')}>
       <Container className={classes.inner}>
         <div className={classes.logo}>
           <Title order={3}>Newslice.io</Title>

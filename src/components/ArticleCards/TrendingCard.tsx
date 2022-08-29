@@ -4,7 +4,6 @@ import { TrendingArticle } from '../../constants/trendingArticles';
 
 const useStyles = createStyles((theme) => ({
   card: {
-    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white,
     textAlign: 'left',
     marginBottom: theme.spacing.md,
   },
@@ -12,11 +11,6 @@ const useStyles = createStyles((theme) => ({
   title: {
     fontWeight: 500,
     lineHeight: 1.2,
-
-    '&:hover': {
-      color: theme.primaryColor,
-      textDecoration: 'underline',
-    },
   },
 
   body: {
@@ -34,7 +28,7 @@ interface ArticleCardVerticalProps {
 }
 
 const TrendingCard = ({ article, size, showDescription }: ArticleCardVerticalProps): JSX.Element => {
-  const { classes } = useStyles();
+  const { classes, cx } = useStyles();
   const { name, image, webSearchUrl, query, isBreakingNews } = article;
   let imageDimensions: number,
     lineClamp: number,
@@ -45,7 +39,7 @@ const TrendingCard = ({ article, size, showDescription }: ArticleCardVerticalPro
     lineClamp = 4;
     margin = 8;
   } else if (size === Size.sm) {
-    imageDimensions = 60;
+    imageDimensions = 75;
     lineClamp = 2;
     margin = 4;
   } else {
@@ -57,32 +51,32 @@ const TrendingCard = ({ article, size, showDescription }: ArticleCardVerticalPro
 
   return (
     <Card
-      radius='md'
       p={0}
-      className={classes.card}
+      className={cx(classes.card, 'Card-Bg')}
+      component='a'
+      href={webSearchUrl}
+      target='_blank'
     >
-      <Group noWrap spacing={0} align='start'>
-        <Image src={image.url}
-               height={imageDimensions}
-               width={imageDimensions}
-               radius='md'
-               fit='cover'
-               withPlaceholder
+      <Group noWrap spacing={0} align='center'>
+        <Image
+          src={image.url}
+          height={imageDimensions}
+          width={imageDimensions}
+          fit='cover'
+          withPlaceholder
         />
         <div className={classes.body}>
           <Text
             className={classes.title}
-            component='a'
-            href={webSearchUrl}
-            target="_blank"
             lineClamp={lineClamp}
             mb={margin}
-            size={size === Size.lg ? 'lg' : 'md'}
+            size={size === Size.lg ? 'md': 'sm'}
+            component='span'
           >
             {query.text}
           </Text>
-          <Text size='xs' color='dimmed'>{name}</Text>
-          <Text size='xs' color='dimmed' weight={500}>{image.provider[0].name}</Text>
+          <Text size='xs'>{name}</Text>
+          <Text size='xs'weight={500}>{image.provider[0].name}</Text>
           {(showDescription === true) &&
             <Text lineClamp={lineClamp}>{isBreakingNews}</Text>
           }

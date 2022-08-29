@@ -97,6 +97,9 @@ const Category = (): JSX.Element => {
       case 'World_Asia':
         setArticles(AsiaArticles);
         break;
+      case 'World_Europe':
+        setArticles(EuropeArticles);
+        break;
       case 'US':
         setArticles(UsArticles);
         break;
@@ -139,6 +142,9 @@ const Category = (): JSX.Element => {
       case 'Sports_CBB':
         setArticles(CbbArticles);
         break;
+      case 'Sports_MLB':
+        setArticles(MlbArticles);
+        break;
       default:
         setArticles(GeneralArticles);
         break;
@@ -162,6 +168,7 @@ const Category = (): JSX.Element => {
                   key={article.url}
                   article={article}
                   size={Size.md}
+                  className='Card-Bg'
                 />
               ))}
             </SimpleGrid>

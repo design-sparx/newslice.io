@@ -5,7 +5,6 @@ import { Size } from '../../constants/cardSizes';
 const useStyles = createStyles((theme: MantineTheme) => ({
   card: {
     position: 'relative',
-    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white,
     textAlign: 'left',
     padding: 0,
   },
@@ -13,11 +12,6 @@ const useStyles = createStyles((theme: MantineTheme) => ({
   title: {
     marginTop: theme.spacing.md,
     marginBottom: theme.spacing.xs / 2,
-
-    '&:hover': {
-      color: theme.primaryColor,
-      textDecoration: 'underline',
-    },
   },
 
   description: {
@@ -72,7 +66,12 @@ const TextImageCard = ({ className, article, size, showDescription }: ArticleCar
   }
 
   return (
-    <Card className={cx(classes.card, className)}>
+    <Card
+      className={cx(classes.card, className)}
+      component='a'
+      {...linkProps}
+      pt={0}
+    >
       {
         (image != null) ?
           (<>
@@ -83,10 +82,9 @@ const TextImageCard = ({ className, article, size, showDescription }: ArticleCar
               className={classes.title}
               weight={500}
               lineClamp={lineClamp}
-              component='a'
               mb={margin}
               size={size === Size.lg ? 'lg' : 'md'}
-              {...linkProps}
+              component='span'
             >
               {name}
             </Text>
@@ -94,11 +92,11 @@ const TextImageCard = ({ className, article, size, showDescription }: ArticleCar
             <Group noWrap spacing={4} className={classes.footer}>
               <Center>
                 <Avatar size='sm' src={provider[0].image?.thumbnail.contentUrl} />
-                <Text size='xs' color='dimmed' weight={500} ml={4}>{provider[0].name}</Text>
+                <Text size='xs' weight={500} ml={4}>{provider[0].name}</Text>
               </Center>
               <Text size='xs' color='dimmed'>-</Text>
               <Center>
-                <Text size='xs' color='dimmed'>{new Date(datePublished).toLocaleDateString()}</Text>
+                <Text size='xs'>{new Date(datePublished).toLocaleDateString()}</Text>
               </Center>
             </Group>
 
@@ -116,10 +114,9 @@ const TextImageCard = ({ className, article, size, showDescription }: ArticleCar
                     className={classes.title}
                     weight={500}
                     lineClamp={lineClamp}
-                    component='a'
                     mb={margin}
                     size={size === Size.lg ? 'lg' : 'md'}
-                    {...linkProps}
+                    component='span'
                   >
                     {name}
                   </Text>
@@ -127,11 +124,11 @@ const TextImageCard = ({ className, article, size, showDescription }: ArticleCar
                   <Group noWrap spacing={4} className={classes.footer}>
                     <Center>
                       <Avatar size='sm' src={provider[0].image?.thumbnail.contentUrl} />
-                      <Text size='xs' color='dimmed' weight={500} ml={4}>{provider[0].name}</Text>
+                      <Text size='xs' weight={500} ml={4}>{provider[0].name}</Text>
                     </Center>
-                    <Text size='xs' color='dimmed'>-</Text>
+                    <Text size='xs'>-</Text>
                     <Center>
-                      <Text size='xs' color='dimmed'>{new Date(datePublished).toLocaleDateString()}</Text>
+                      <Text size='xs'>{new Date(datePublished).toLocaleDateString()}</Text>
                     </Center>
                   </Group>
 

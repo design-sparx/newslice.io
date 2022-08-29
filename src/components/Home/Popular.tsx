@@ -30,7 +30,7 @@ const PopularSection = ({ articles }: PopularProps): JSX.Element => {
       <Divider className={classes.titleWrapper} />
       <SimpleGrid cols={1} spacing='xs' breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
         {articles.map((article) => (
-          <HorizontalCard key={article.url} article={article} />
+          <HorizontalCard key={article.url} article={article} className='Card-Bg' />
         ))}
       </SimpleGrid>
     </Box>

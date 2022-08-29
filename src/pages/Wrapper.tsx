@@ -36,26 +36,26 @@ const Wrapper = ({ children, showFeed }: WrapperProps): JSX.Element => {
   return (
     <>
       <AppNav market={market} maxMenuItems={8} />
-      <Container fluid className={classes.container}>
-        {(showFeed === true) &&
-          <FeedSection articles={TrendingArticles.value.slice(0, 10)} />
-        }
-        <Grid>
-          <Grid.Col lg={8}>
-            {children}
-          </Grid.Col>
-          <Grid.Col lg={4}>
-            <SimpleGrid breakpoints={[
-              { minWidth: 'sm', cols: 1 },
-              { minWidth: 'md', cols: 2 },
-              { minWidth: 1200, cols: 1 },
-            ]}>
-              <PopularSection articles={UsArticles.value.slice(0, 10)} />
-              <RecentSection articles={GeneralArticles.value.slice(0, 10)} />
-            </SimpleGrid>
-          </Grid.Col>
-        </Grid>
-      </Container>
+        <Container fluid className={classes.container}>
+          {(showFeed === true) &&
+            <FeedSection articles={TrendingArticles.value.slice(0, 10)} />
+          }
+          <Grid>
+            <Grid.Col lg={8}>
+              {children}
+            </Grid.Col>
+            <Grid.Col lg={4}>
+              <SimpleGrid breakpoints={[
+                { minWidth: 'sm', cols: 1 },
+                { minWidth: 'md', cols: 2 },
+                { minWidth: 1200, cols: 1 },
+              ]}>
+                <PopularSection articles={UsArticles.value.slice(0, 5)} />
+                <RecentSection articles={GeneralArticles.value.slice(0, 5)} />
+              </SimpleGrid>
+            </Grid.Col>
+          </Grid>
+        </Container>
       <FooterSection data={FooterLinks.data} />
     </>
   );

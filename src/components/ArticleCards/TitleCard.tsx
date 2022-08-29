@@ -1,4 +1,4 @@
-import { createStyles, Card, Image, Text, Group, Grid, Anchor, Center, Avatar } from '@mantine/core';
+import { createStyles, Card, Image, Text, Group, Grid, Center, Avatar, Title } from '@mantine/core';
 import { Article } from '../../constants/articles';
 
 const useStyles = createStyles((theme) => ({
@@ -39,6 +39,8 @@ const VerticalTextCard = ({ article, imageHeight }: VerticalTextCardProps): JSX.
       radius='md'
       p={0}
       className={classes.card}
+      component='a'
+      href={url}
     >
       <Grid align='center'>
         {(image != null) &&
@@ -48,21 +50,21 @@ const VerticalTextCard = ({ article, imageHeight }: VerticalTextCardProps): JSX.
         }
         <Grid.Col lg={6}>
           <div className={classes.body}>
-            <Anchor
+            <Text
               className={classes.title}
-              href={url}
+              component='a'
             >
               {name}
-            </Anchor>
+            </Text>
             <Text lineClamp={3} my='md'>{description}</Text>
             <Group noWrap spacing='xs'>
               <Center>
                 <Avatar size='sm' src={provider[0].image?.thumbnail.contentUrl} />
-                <Text size='xs' color='dimmed' weight={500} ml={4}>{provider[0].name}</Text>
+                <Text size='xs' weight={500}>{provider[0].name}</Text>
               </Center>
-              <Text size='xs' color='dimmed'>-</Text>
+              <Text size='xs'>-</Text>
               <Center>
-                <Text size='xs' color='dimmed' ml={4}>{new Date(datePublished).toLocaleDateString()}</Text>
+                <Text size='xs'>{new Date(datePublished).toLocaleDateString()}</Text>
               </Center>
             </Group>
           </div>

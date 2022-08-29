@@ -18,7 +18,7 @@ interface RecentProps {
   articles: Article[];
 }
 
-const RecentSection = ({ articles }: RecentProps) => {
+const RecentSection = ({ articles }: RecentProps): JSX.Element => {
   const { classes } = useStyles();
   return (
     <Box mb='lg'>
@@ -34,6 +34,7 @@ const RecentSection = ({ articles }: RecentProps) => {
             key={article.url}
             article={article}
             size={Size.md}
+            className='Card-Bg'
           />
         ))}
       </SimpleGrid>

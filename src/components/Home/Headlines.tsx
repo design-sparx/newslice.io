@@ -1,16 +1,28 @@
 import React from 'react';
 import { Article } from '../../constants/articles';
 import { Carousel } from '@mantine/carousel';
-import { Box, SimpleGrid, useMantineTheme } from '@mantine/core';
+import { Box, createStyles, Divider, Group, MantineTheme, SimpleGrid, Title, useMantineTheme } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import { ImageCard, TextImageCard } from '../ArticleCards';
 import { Size } from '../../constants/cardSizes';
+
+const useStyles = createStyles((theme: MantineTheme) => ({
+  wrapper: {
+    paddingTop: theme.spacing.xl,
+    paddingBottom: theme.spacing.xl,
+  },
+  titleWrapper: {
+    paddingBottom: theme.spacing.lg,
+    textTransform: 'capitalize',
+  },
+}));
 
 interface HeadlinesProps {
   articles: Article[];
 }
 
 const HeadlinesSection = ({ articles }: HeadlinesProps): JSX.Element => {
+  const { classes } = useStyles();
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm}px)`);
   const slides = articles.map((article) => (
@@ -21,6 +33,12 @@ const HeadlinesSection = ({ articles }: HeadlinesProps): JSX.Element => {
 
   return (
     <Box mb='lg'>
+      <Group className={classes.titleWrapper}>
+        <Title order={3}>
+          Headlines
+        </Title>
+      </Group>
+      <Divider className={classes.titleWrapper} />
       <Carousel
         slideSize='100%'
         breakpoints={[{ maxWidth: 'sm', slideSize: '100%', slideGap: 2 }]}
@@ -40,6 +58,7 @@ const HeadlinesSection = ({ articles }: HeadlinesProps): JSX.Element => {
             key={article.url}
             article={article}
             size={Size.md}
+            className='Card-Bg'
           />
         ))}
       </SimpleGrid>
