@@ -10,6 +10,7 @@ const useStyles = createStyles((theme: MantineTheme) => ({
   },
   titleWrapper: {
     paddingBottom: theme.spacing.lg,
+    textTransform: 'capitalize'
   },
 }));
 
@@ -17,19 +18,19 @@ interface PopularProps {
   articles: Article[];
 }
 
-const PopularSection = ({ articles }: PopularProps) => {
+const PopularSection = ({ articles }: PopularProps): JSX.Element => {
   const { classes } = useStyles();
   return (
     <Box mb="lg">
       <Group className={classes.titleWrapper}>
         <Title order={3}>
-          Popular articles
+          Popular
         </Title>
       </Group>
       <Divider className={classes.titleWrapper} />
       <SimpleGrid cols={1} spacing='xs' breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
         {articles.map((article) => (
-          <HorizontalCard key={article.url} article={article} />
+          <HorizontalCard key={article.url} article={article} className='Card-Bg' />
         ))}
       </SimpleGrid>
     </Box>

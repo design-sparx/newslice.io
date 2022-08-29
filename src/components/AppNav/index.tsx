@@ -1,15 +1,18 @@
 import {
   createStyles,
   Header,
-  Autocomplete,
+  Input,
   Group,
   Text,
   Divider,
   Container,
   ActionIcon,
   Tooltip,
+  Center,
+  Menu,
 } from '@mantine/core';
-import { IconSearch, IconNews, IconBell, IconSettings } from '@tabler/icons';
+import { IconSearch, IconNews, IconBell, IconSettings, IconChevronDown, IconDots } from '@tabler/icons';
+import { Market } from '../../constants/market';
 
 const useStyles = createStyles((theme) => ({
   header: {
@@ -36,6 +39,8 @@ const useStyles = createStyles((theme) => ({
 
   search: {
     width: 500,
+    background: 'transparent',
+
     [theme.fn.smallerThan('xs')]: {
       display: 'none',
     },
@@ -55,39 +60,160 @@ const useStyles = createStyles((theme) => ({
       backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
     },
   },
+
+  linkLabel: {
+    marginRight: 5,
+  },
+
+  menuControl: {
+    borderTopLeftRadius: 0,
+    borderBottomLeftRadius: 0,
+    border: 0,
+    borderLeft: `1px solid ${theme.colors.gray[1]}`,
+  },
 }));
 
 interface AppNavProps {
-  links: Array<{ link: string; label: string }>;
+  market?: Market;
+  maxMenuItems: number;
 }
 
-const AppNav = ({ links }: AppNavProps): JSX.Element => {
-  const { classes } = useStyles();
+const AppNav = ({ market, maxMenuItems }: AppNavProps): JSX.Element => {
+  const { classes, cx } = useStyles();
 
-  const items = links.map((link) => (
-    <a
-      key={link.label}
-      href={link.link}
-      className={classes.link}
-      onClick={(event) => event.preventDefault()}
-    >
-      {link.label}
-    </a>
-  ));
+  const menuHandler = (): JSX.Element => {
+    let items: JSX.Element[] | undefined;
+    let overflow: any = <></>;
+    if ((market != null) && market?.categories.length > maxMenuItems) {
+      items = market.categories.slice(0, maxMenuItems).map((c) => {
+        const menuItems = c.subCategories?.map((s) => (
+          <Menu.Item key={s.title} component='a' href={`/#/category/${s.title}`}>{s.title}</Menu.Item>
+        ));
+
+        if (menuItems != null) {
+          return (
+            <Group spacing={0} key={`nav-${c.title}`}>
+              <a
+                href={`/#/category/${c.title}`}
+                className={classes.link}
+              >
+                {c.title}
+              </a>
+              <Menu trigger='hover' exitTransitionDuration={0}>
+                <Menu.Target>
+                  <ActionIcon className={classes.menuControl}>
+                    <IconChevronDown size={12} />
+                  </ActionIcon>
+                </Menu.Target>
+                <Menu.Dropdown>{menuItems}</Menu.Dropdown>
+              </Menu>
+            </Group>
+          );
+        }
+
+        return (
+          <a
+            key={`nav-${c.title}`}
+            href={`/#/category/${c.title}`}
+            className={classes.link}
+          >
+            {c.title}
+          </a>
+        );
+      });
+      overflow = market.categories.slice(maxMenuItems, market.categories.length - 1).map(c => {
+        const menuItems = c.subCategories?.map((s) => (
+          <Menu.Item key={`ov-${s.title}`} component='a' href={`/#/category/${s.title}`}>{s.title}</Menu.Item>
+        ));
+
+        if (menuItems != null) {
+          return (
+            <Group spacing={0} key={`nav-${c.title}`}>
+              <a
+                href={`/#/category/${c.title}`}
+                className={classes.link}
+              >
+                {c.title}
+              </a>
+              <Menu key={`menu-${c.title}`} trigger='hover' exitTransitionDuration={0}>
+                <Menu.Target>
+                  <ActionIcon className={classes.menuControl}>
+                    <IconChevronDown size={12} />
+                  </ActionIcon>
+                </Menu.Target>
+                <Menu.Dropdown>{menuItems}</Menu.Dropdown>
+              </Menu>
+            </Group>
+          );
+        }
+
+        return (
+          <Menu.Item key={`nav-${c.title}`} component='a' href={`/#/category/${c.title}`}>{c.title}</Menu.Item>
+        );
+      });
+    } else {
+      items = market?.categories.map((c) => {
+        const menuItems = c.subCategories?.map((s) => (
+          <Menu.Item key={s.title}>{s.title}</Menu.Item>
+        ));
+
+        if (menuItems != null) {
+          return (
+            <Menu trigger='hover' exitTransitionDuration={0}>
+              <Menu.Target>
+                <a
+                  href={`/#/category/${c.title}`}
+                  className={classes.link}
+                  onClick={(event) => event.preventDefault()}
+                >
+                  <Center>
+                    <span className={classes.linkLabel}>{c.title}</span>
+                    <IconChevronDown size={12} stroke={1.5} />
+                  </Center>
+                </a>
+              </Menu.Target>
+              <Menu.Dropdown>{menuItems}</Menu.Dropdown>
+            </Menu>
+          );
+        }
+
+        return (
+          <a
+            key={c.title}
+            href={`/#/category/${c.title}`}
+            className={classes.link}
+          >
+            {c.title}
+          </a>);
+      });
+    }
+
+    return <>
+      {items}
+      <Menu shadow='md' width={200} trigger='hover' exitTransitionDuration={0}>
+        <Menu.Target>
+          <a className={classes.link}><IconDots size={14} /></a>
+        </Menu.Target>
+        <Menu.Dropdown>
+          <Menu.Label>More topics</Menu.Label>
+          {overflow}
+        </Menu.Dropdown>
+      </Menu>
+    </>;
+  };
 
   return (
-    <Header className={classes.header} mb={60} height='100%'>
+    <Header className={cx(classes.header, 'Nav-Bg')} mb={30} height='100%'>
       <div className={classes.inner}>
         <Group>
           <IconNews size={24} />
           <Text size='lg' transform='uppercase' weight={700}>Newslice</Text>
         </Group>
         <Group>
-          <Autocomplete
-            className={classes.search}
+          <Input
+            className={cx(classes.search, 'Input-Bg')}
             placeholder='Search'
             icon={<IconSearch size={16} stroke={1.5} />}
-            data={['React', 'Angular', 'Vue', 'Next.js', 'Riot.js', 'Svelte', 'Blitz.js']}
           />
         </Group>
         <Group>
@@ -103,18 +229,17 @@ const AppNav = ({ links }: AppNavProps): JSX.Element => {
           </Tooltip>
         </Group>
       </div>
-      <Container className={classes.inner} mt='md'>
-        <Group spacing={5} className={classes.links}>
+      <Container fluid className={classes.inner} mt='md'>
+        <Group spacing='xs' className={classes.links}>
           <a
             key={'home'}
-            href='/'
+            href='/#/'
             className={classes.link}
-            onClick={(event) => event.preventDefault()}
           >
             home
           </a>
           <Divider orientation='vertical' />
-          {items}
+          {menuHandler()}
         </Group>
       </Container>
     </Header>

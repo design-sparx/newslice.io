@@ -1,0 +1,462 @@
+{
+  "_type": "News",
+  "webSearchUrl": "https:\/\/www.bing.com\/news\/search?q=Movie+%26+TV+News&form=TNSA02",
+  "value": [
+    {
+      "_type": "NewsArticle",
+      "name": "Looks like Warner Bros. Discovery’s DC film franchise might have found its new leader",
+      "url": "https:\/\/www.theverge.com\/2022\/8\/26\/23323126\/warner-bros-discovery-dan-lin-dc-films",
+      "image": {
+        "_type": "ImageObject",
+        "thumbnail": {
+          "_type": "ImageObject",
+          "contentUrl": "https:\/\/www.bing.com\/th?id=OVFT.kqFT54nonXBGV__C3UquHC&pid=News",
+          "width": 700,
+          "height": 366
+        }
+      },
+      "description": "Warner Bros. Discovery CEO David Zaslav told investors earlier this month that his grand vision to revitalize the company included finding a new Kevin Feige type to lead its embattled DC Films division to a new era of Marvel Studios-like success.",
+      "about": [
+        {
+          "_type": "Thing",
+          "readLink": "https:\/\/api.cognitive.microsoft.com\/api\/v7\/entities\/33f121a2-10fd-b65f-3783-ef6fc0df6a19",
+          "name": "Dan Lin"
+        },
+        {
+          "_type": "Thing",
+          "readLink": "https:\/\/api.cognitive.microsoft.com\/api\/v7\/entities\/43c6f14d-c3e9-4b64-6154-aa0aedd74b01",
+          "name": "Warner Bros. Entertainment"
+        }
+      ],
+      "mentions": [
+        {
+          "_type": "Thing",
+          "name": "Dan Lin"
+        },
+        {
+          "_type": "Thing",
+          "name": "Warner Bros. Entertainment"
+        },
+        {
+          "_type": "Thing",
+          "name": "Film"
+        }
+      ],
+      "provider": [
+        {
+          "_type": "Organization",
+          "name": "The Verge",
+          "image": {
+            "_type": "ImageObject",
+            "thumbnail": {
+              "_type": "ImageObject",
+              "contentUrl": "https:\/\/www.bing.com\/th?id=AR_eb7025b256a046a33c77675eb0c54b11&pid=news"
+            }
+          }
+        }
+      ],
+      "datePublished": "2022-08-26T19:17:00.0000000Z",
+      "category": "Entertainment_MovieAndTV"
+    },
+    {
+      "_type": "NewsArticle",
+      "name": "Paul Newman’s daughters sue Newman’s Own Foundation over ‘questionable practices’",
+      "url": "https:\/\/www.msn.com\/en-us\/news\/us\/paul-newman-s-daughters-sue-newman-s-own-foundation-over-questionable-practices\/ar-AA118LHK",
+      "image": {
+        "_type": "ImageObject",
+        "thumbnail": {
+          "_type": "ImageObject",
+          "contentUrl": "https:\/\/www.bing.com\/th?id=OVFT.ZuII9wZeHrNhksFxApuMci&pid=News",
+          "width": 700,
+          "height": 367
+        }
+      },
+      "description": "Paul Newman’s daughters are suing Newman’s Own Foundation over what they claim to be “questionable practices” conducted by the charitable organization. Load Error On Aug. 23, Nell and Susan Newman, two daughters among the late Paul Newman's six children, filed suit against the Newman’s Own Foundation (NOF) in Connecticut state court.",
+      "provider": [
+        {
+          "_type": "Organization",
+          "name": "MSN"
+        }
+      ],
+      "datePublished": "2022-08-26T19:09:00.0000000Z",
+      "category": "Entertainment_MovieAndTV"
+    },
+    {
+      "_type": "NewsArticle",
+      "name": "Nichelle Nichols to Rest Among the Stars, ‘Star Trek’ Actress’ Ashes Will Be Sent to ...",
+      "url": "https:\/\/www.thewrap.com\/nichelle-nichols-memorial-ashes-sent-to-space-enterprise\/",
+      "image": {
+        "_type": "ImageObject",
+        "thumbnail": {
+          "_type": "ImageObject",
+          "contentUrl": "https:\/\/www.bing.com\/th?id=OVFT.sxBYSQOf2IXXCgQx-yEoVC&pid=News",
+          "width": 700,
+          "height": 393
+        }
+      },
+      "description": "Celestis, Inc., a memorial space flights company, announced Thursday that it will send some of Nichelle Nichols’ ashes to space — a fitting resting place among the stars for the iconic and history-making “Star Trek” actress.",
+      "about": [
+        {
+          "_type": "Thing",
+          "readLink": "https:\/\/api.cognitive.microsoft.com\/api\/v7\/entities\/54543ce5-b061-dd80-049f-f1bb5459e243",
+          "name": "Nichelle Nichols"
+        },
+        {
+          "_type": "Thing",
+          "readLink": "https:\/\/api.cognitive.microsoft.com\/api\/v7\/entities\/caa6c26b-1d3d-4642-966c-96d7e2cbb6c2",
+          "name": "Rest"
+        },
+        {
+          "_type": "Thing",
+          "readLink": "https:\/\/api.cognitive.microsoft.com\/api\/v7\/entities\/6d3fe656-ec47-e7d0-ecb7-3efdaaa0dd78",
+          "name": "Star Trek"
+        }
+      ],
+      "mentions": [
+        {
+          "_type": "Thing",
+          "name": "Nichelle Nichols"
+        },
+        {
+          "_type": "Thing",
+          "name": "Rest"
+        },
+        {
+          "_type": "Thing",
+          "name": "Star Trek"
+        }
+      ],
+      "provider": [
+        {
+          "_type": "Organization",
+          "name": "TheWrap",
+          "image": {
+            "_type": "ImageObject",
+            "thumbnail": {
+              "_type": "ImageObject",
+              "contentUrl": "https:\/\/www.bing.com\/th?id=AR_f14dac560f5621b2be6b0ab62d95e572&pid=news"
+            }
+          }
+        }
+      ],
+      "datePublished": "2022-08-26T19:17:00.0000000Z",
+      "category": "Entertainment_MovieAndTV",
+      "ampUrl": "https:\/\/www.thewrap.com\/nichelle-nichols-memorial-ashes-sent-to-space-enterprise\/amp\/"
+    },
+    {
+      "_type": "NewsArticle",
+      "name": "Prince Charles in ‘Explorer’: Watch First Clip From Documentary on World’s Greatest ...",
+      "url": "https:\/\/variety.com\/2022\/film\/global\/prince-charles-explorer-ranulph-fiennes-documentary-1235352059\/",
+      "image": {
+        "_type": "ImageObject",
+        "thumbnail": {
+          "_type": "ImageObject",
+          "contentUrl": "https:\/\/www.bing.com\/th?id=OVFT.m59frSzrPnAvwnRvGf6IcC&pid=News",
+          "width": 700,
+          "height": 394
+        }
+      },
+      "description": "Explorer,” a portrait of Ranulph Fiennes, credited with the title, World’s Greatest Living Explorer, is set for a digital and on demand release. The documentary feature peels back the",
+      "about": [
+        {
+          "_type": "Thing",
+          "readLink": "https:\/\/api.cognitive.microsoft.com\/api\/v7\/entities\/e75061b3-fb0b-1426-4211-39f71cc84b6a",
+          "name": "Prince Charles"
+        },
+        {
+          "_type": "Thing",
+          "readLink": "https:\/\/api.cognitive.microsoft.com\/api\/v7\/entities\/ee6ef423-77c2-51a0-0e16-62bd27dbc97c",
+          "name": "Variety"
+        },
+        {
+          "_type": "Thing",
+          "readLink": "https:\/\/api.cognitive.microsoft.com\/api\/v7\/entities\/15d85dba-6a04-1327-2f84-1589b6b310b8",
+          "name": "Internet Explorer"
+        }
+      ],
+      "mentions": [
+        {
+          "_type": "Thing",
+          "name": "Prince Charles"
+        },
+        {
+          "_type": "Thing",
+          "name": "Variety"
+        },
+        {
+          "_type": "Thing",
+          "name": "Internet Explorer"
+        }
+      ],
+      "provider": [
+        {
+          "_type": "Organization",
+          "name": "Variety",
+          "image": {
+            "_type": "ImageObject",
+            "thumbnail": {
+              "_type": "ImageObject",
+              "contentUrl": "https:\/\/www.bing.com\/th?id=AR_1aeec09737ded6d02927b9a66b3f3caa&pid=news"
+            }
+          }
+        }
+      ],
+      "datePublished": "2022-08-26T19:02:00.0000000Z",
+      "video": {
+        "_type": "VideoObject",
+        "name": "Prince Charles in 'Explorer': Clip From Ranulph Fiennes Documentary",
+        "thumbnailUrl": "https:\/\/www.bing.com\/th?id=OVF.%2B%2BGYjtzYGNv58m8dY0I2hg&pid=News",
+        "thumbnail": {
+          "_type": "ImageObject",
+          "width": 520,
+          "height": 293
+        }
+      },
+      "category": "Entertainment_MovieAndTV",
+      "ampUrl": "https:\/\/variety.com\/2022\/film\/global\/prince-charles-explorer-ranulph-fiennes-documentary-1235352059\/amp\/"
+    },
+    {
+      "_type": "NewsArticle",
+      "name": "SVU’s Mariska Hargitay Hypes Next Law And Order Crossover With Dramatic New Video",
+      "url": "https:\/\/www.cinemablend.com\/television\/svus-mariska-hargitay-hypes-next-law-and-order-crossover-with-dramatic-new-video",
+      "image": {
+        "_type": "ImageObject",
+        "thumbnail": {
+          "_type": "ImageObject",
+          "contentUrl": "https:\/\/www.bing.com\/th?id=OVFT.XcNT0b8bIKnBNb_TpZKtBS&pid=News",
+          "width": 700,
+          "height": 393
+        }
+      },
+      "description": "Mariska Hargitay is hyping up the big Law & Order crossover with a dramatic new video and it's making me excited for what's to come.",
+      "about": [
+        {
+          "_type": "Thing",
+          "readLink": "https:\/\/api.cognitive.microsoft.com\/api\/v7\/entities\/f8769ce8-f3e2-342f-27f6-ff3794bc1144",
+          "name": "Mariska Hargitay"
+        },
+        {
+          "_type": "Thing",
+          "readLink": "https:\/\/api.cognitive.microsoft.com\/api\/v7\/entities\/7c173e0a-8b30-e9f8-ca23-ce0e8c3f0b51",
+          "name": "Crossover"
+        },
+        {
+          "_type": "Thing",
+          "readLink": "https:\/\/api.cognitive.microsoft.com\/api\/v7\/entities\/1cc09657-7b2c-154c-8e44-b99f33d777a5",
+          "name": "Law & Order"
+        }
+      ],
+      "provider": [
+        {
+          "_type": "Organization",
+          "name": "Cinema Blend",
+          "image": {
+            "_type": "ImageObject",
+            "thumbnail": {
+              "_type": "ImageObject",
+              "contentUrl": "https:\/\/www.bing.com\/th?id=AR_0836406a58325c6b470de7d0f805c499&pid=news"
+            }
+          }
+        }
+      ],
+      "datePublished": "2022-08-26T19:19:00.0000000Z",
+      "category": "Entertainment_MovieAndTV"
+    },
+    {
+      "_type": "NewsArticle",
+      "name": "Deaf Actress Rose Ayling-Ellis: “I Am Disabled Because I Live and Work in a World That ...",
+      "url": "https:\/\/www.hollywoodreporter.com\/tv\/tv-news\/rose-ayling-ellis-deaf-token-character-1235203340\/",
+      "image": {
+        "_type": "ImageObject",
+        "thumbnail": {
+          "_type": "ImageObject",
+          "contentUrl": "https:\/\/www.bing.com\/th?id=OVFT.6R8FSl2RVMM5xBnqC_B-uC&pid=News",
+          "width": 700,
+          "height": 443
+        }
+      },
+      "description": "\"I am done with being the token deaf character,\" she told the Edinburgh TV Festival in the Alternative MacTaggart Lecture. \"I believe that diverse, rich and fascinating deaf stories are ready to go mainstream and that we can do this,",
+      "about": [
+        {
+          "_type": "Thing",
+          "readLink": "https:\/\/api.cognitive.microsoft.com\/api\/v7\/entities\/1e2687ca-7af8-4223-8a7d-26eba23a424a",
+          "name": "Ellis County"
+        },
+        {
+          "_type": "Thing",
+          "readLink": "https:\/\/api.cognitive.microsoft.com\/api\/v7\/entities\/227e3266-de34-ca9c-bd7e-045562458262",
+          "name": "Deafness"
+        },
+        {
+          "_type": "Thing",
+          "readLink": "https:\/\/api.cognitive.microsoft.com\/api\/v7\/entities\/ddb7c000-f710-87a0-dfc6-763c39ac30ee",
+          "name": "World"
+        }
+      ],
+      "provider": [
+        {
+          "_type": "Organization",
+          "name": "The Hollywood Reporter"
+        }
+      ],
+      "datePublished": "2022-08-26T19:24:00.0000000Z",
+      "category": "Entertainment_MovieAndTV",
+      "ampUrl": "https:\/\/www.hollywoodreporter.com\/tv\/tv-news\/rose-ayling-ellis-deaf-token-character-1235203340\/amp\/"
+    },
+    {
+      "_type": "NewsArticle",
+      "name": "Brian Cox: Logan Roy on ‘Succession’ Would ‘Hate Me’ in Real Life",
+      "url": "https:\/\/www.indiewire.com\/2022\/08\/succession-brian-cox-logan-roy-would-hate-me-1234755665\/",
+      "image": {
+        "_type": "ImageObject",
+        "thumbnail": {
+          "_type": "ImageObject",
+          "contentUrl": "https:\/\/www.bing.com\/th?id=OVFT.IAMeI8xP8qvy5i8wlylRjS&pid=News",
+          "width": 700,
+          "height": 465
+        }
+      },
+      "description": "Brian Cox thinks Logan Roy would tell him to “f**k off” in real life. The “Succession” Emmy winner reflected on playing media mogul Roy on the hit HBO series during the Edinburgh TV Festival in Scotland.",
+      "about": [
+        {
+          "_type": "Thing",
+          "readLink": "https:\/\/api.cognitive.microsoft.com\/api\/v7\/entities\/cb0df3ca-c9c7-7592-8ef7-d4463ed7b6da",
+          "name": "Brian Cox"
+        },
+        {
+          "_type": "Thing",
+          "readLink": "https:\/\/api.cognitive.microsoft.com\/api\/v7\/entities\/46a42de5-567f-45ad-bccc-d30831a0ccb5",
+          "name": "Logan"
+        },
+        {
+          "_type": "Thing",
+          "readLink": "https:\/\/api.cognitive.microsoft.com\/api\/v7\/entities\/a3d1cea5-89d1-2cc5-09cf-2a12327e43fe",
+          "name": "Roy"
+        }
+      ],
+      "provider": [
+        {
+          "_type": "Organization",
+          "name": "IndieWire"
+        }
+      ],
+      "datePublished": "2022-08-26T19:00:00.0000000Z",
+      "category": "Entertainment_MovieAndTV",
+      "ampUrl": "https:\/\/www.indiewire.com\/2022\/08\/succession-brian-cox-logan-roy-would-hate-me-1234755665\/amp\/"
+    },
+    {
+      "_type": "NewsArticle",
+      "name": "Multiple Sources Share One Thing Kim Kardashian Reportedly Wasn't Happy With While Dating ...",
+      "url": "https:\/\/www.cinemablend.com\/streaming-news\/multiple-sources-share-one-thing-kim-kardashian-reportedly-wasnt-happy-with-while-dating-pete-davidson",
+      "image": {
+        "_type": "ImageObject",
+        "thumbnail": {
+          "_type": "ImageObject",
+          "contentUrl": "https:\/\/www.bing.com\/th?id=OVFT.O-4yaRrSBibH4-qCSwWCCi&pid=News",
+          "width": 320,
+          "height": 180
+        }
+      },
+      "description": "Recent reports are saying that Kim Kardashian is “open” to dating again after a few weeks without Pete Davidson, but she may look for someone older this time around. Per a source’s words to Hollywood Life,",
+      "about": [
+        {
+          "_type": "Thing",
+          "readLink": "https:\/\/api.cognitive.microsoft.com\/api\/v7\/entities\/32781737-8f23-60aa-744d-bd8730a05df8",
+          "name": "Kim Kardashian"
+        },
+        {
+          "_type": "Thing",
+          "readLink": "https:\/\/api.cognitive.microsoft.com\/api\/v7\/entities\/ed0f43d6-6ec4-3f88-d965-bc9ce53cd4ad",
+          "name": "Davidson"
+        },
+        {
+          "_type": "Thing",
+          "readLink": "https:\/\/api.cognitive.microsoft.com\/api\/v7\/entities\/5331fe18-150f-9c34-7162-fc655c060542",
+          "name": "Dating"
+        }
+      ],
+      "provider": [
+        {
+          "_type": "Organization",
+          "name": "Cinema Blend",
+          "image": {
+            "_type": "ImageObject",
+            "thumbnail": {
+              "_type": "ImageObject",
+              "contentUrl": "https:\/\/www.bing.com\/th?id=AR_0836406a58325c6b470de7d0f805c499&pid=news"
+            }
+          }
+        }
+      ],
+      "datePublished": "2022-08-26T18:32:00.0000000Z",
+      "category": "Entertainment_MovieAndTV"
+    },
+    {
+      "_type": "NewsArticle",
+      "name": "Matt Shakman, WandaVision Director, in Talks to Helm Marvel’s Fantastic Four",
+      "url": "https:\/\/www.msn.com\/en-us\/movies\/news\/matt-shakman-wandavision-director-in-talks-to-helm-marvel-s-fantastic-four\/ar-AA118Sqj",
+      "image": {
+        "_type": "ImageObject",
+        "thumbnail": {
+          "_type": "ImageObject",
+          "contentUrl": "https:\/\/www.bing.com\/th?id=OVFT.R5i62eh8DPGFkUiVYjwXxi&pid=News",
+          "width": 700,
+          "height": 367
+        }
+      },
+      "description": "As Marvel’s new Fantastic Four movie chugs along, it’s snatching up more talent into its forcefield. The latest news about the Phase Six Marvel entry came on August 26: Deadline reports that Matt Shakman — the director behind the Emmy-nominated critical and commercial success WandaVision — may be pulled into the fold.",
+      "provider": [
+        {
+          "_type": "Organization",
+          "name": "Vulture.com on MSN.com",
+          "image": {
+            "_type": "ImageObject",
+            "thumbnail": {
+              "_type": "ImageObject",
+              "contentUrl": "https:\/\/www.bing.com\/th?id=AR_0cfcddaa71cae000b74e3bf52bc84d78&pid=news"
+            }
+          }
+        }
+      ],
+      "datePublished": "2022-08-26T19:15:26.0000000Z",
+      "category": "Entertainment_MovieAndTV"
+    },
+    {
+      "_type": "NewsArticle",
+      "name": "Shia LaBeouf Reveals He's 627 Days Sober and Calls the Past Year 'My Great Humbling'",
+      "url": "https:\/\/people.com\/health\/shia-labeouf-reveals-hes-627-days-sober-calls-the-past-year-his-great-humbling\/",
+      "image": {
+        "_type": "ImageObject",
+        "thumbnail": {
+          "_type": "ImageObject",
+          "contentUrl": "https:\/\/www.bing.com\/th?id=OVFT.I2cqRkXguHP8ZmobR8HBvi&pid=News",
+          "width": 514,
+          "height": 700
+        }
+      },
+      "description": "In a letter to his Olivia Wilde, Shia LaBeouf touched on his sobriety, after a past that has included multiple arrests and rehab stints",
+      "about": [
+        {
+          "_type": "Thing",
+          "readLink": "https:\/\/api.cognitive.microsoft.com\/api\/v7\/entities\/e41c0054-cfcb-7c5f-5ec3-161258b7be8f",
+          "name": "Shia LaBeouf"
+        }
+      ],
+      "provider": [
+        {
+          "_type": "Organization",
+          "name": "People",
+          "image": {
+            "_type": "ImageObject",
+            "thumbnail": {
+              "_type": "ImageObject",
+              "contentUrl": "https:\/\/www.bing.com\/th?id=AR_ee5a67672ebbcb1c0157d92cd8025988&pid=news"
+            }
+          }
+        }
+      ],
+      "datePublished": "2022-08-26T18:44:00.0000000Z",
+      "category": "Entertainment_MovieAndTV"
+    }
+  ]
+}

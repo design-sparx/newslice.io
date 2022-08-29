@@ -1,7 +1,6 @@
-import { createStyles, Card, Image, Text, Group, Center, useMantineTheme } from '@mantine/core';
+import { createStyles, Card, Image, Text, Group, Center, Avatar } from '@mantine/core';
 import { Article } from '../../constants/articles';
 import { Size } from '../../constants/cardSizes';
-import { IconCalendar, IconNews } from '@tabler/icons';
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -17,9 +16,9 @@ const useStyles = createStyles((theme) => ({
 
   body: {
     paddingTop: 0,
+    paddingRight: theme.spacing.sm,
+    paddingLeft: theme.spacing.sm,
     paddingBottom: 0,
-    paddingLeft: theme.spacing.md,
-    paddingRight: theme.spacing.md,
   },
 }));
 
@@ -27,12 +26,12 @@ interface ArticleCardVerticalProps {
   article: Article;
   size?: Size;
   showDescription?: boolean;
+  className?: string;
 }
 
-const HorizontalCard = ({ article, size, showDescription }: ArticleCardVerticalProps): JSX.Element => {
-  const { classes } = useStyles();
-  const theme = useMantineTheme();
-  const { url, urlToImage, source, publishedAt, title, description } = article;
+const HorizontalCard = ({ article, size, showDescription, className }: ArticleCardVerticalProps): JSX.Element => {
+  const { classes, cx } = useStyles();
+  const { name, url, image, description, provider, datePublished } = article;
   let imageDimensions: number,
     lineClamp: number,
     margin: number;
@@ -46,7 +45,7 @@ const HorizontalCard = ({ article, size, showDescription }: ArticleCardVerticalP
     lineClamp = 2;
     margin = 4;
   } else {
-    imageDimensions = 90;
+    imageDimensions = 110;
     lineClamp = 2;
     margin = 12;
   }
@@ -54,43 +53,42 @@ const HorizontalCard = ({ article, size, showDescription }: ArticleCardVerticalP
 
   return (
     <Card
-      radius='md'
+      className={cx(classes.card, className)}
+      component='a'
+      href={url}
+      target='_blank'
       p={0}
-      className={classes.card}
     >
-      <Group noWrap spacing={0} align='start'>
-        {/* @ts-expect-error */}
-        <Image src={urlToImage}
-               height={imageDimensions}
-               width={imageDimensions}
-               radius='md'
-               fit='cover'
-               withPlaceholder
+      <Group noWrap spacing={0} align='center'>
+        <Image
+          src={image?.thumbnail.contentUrl}
+          height={imageDimensions}
+          width={imageDimensions}
+          fit='cover'
+          withPlaceholder
         />
         <div className={classes.body}>
           <Text
             className={classes.title}
-            component='a'
-            href={url}
             lineClamp={lineClamp}
             mb={margin}
             size={size === Size.lg ? 'lg' : 'md'}
+            component='span'
           >
-            {title}
+            {name}
           </Text>
-          <Group noWrap spacing='xs' mb='md'>
+          <Group noWrap spacing='xs'>
             <Center>
-              <IconNews size={14} stroke={1.5} color={theme.colors.dark[2]} />
-              <Text size='xs' color='dimmed' weight={700} ml={4}>{source.name}</Text>
+              <Avatar size='xs' src={provider[0].image?.thumbnail.contentUrl} />
+              <Text size='xs' weight={500} ml={4}>{provider[0].name}</Text>
             </Center>
-            <Text size='xs' color='dimmed'>-</Text>
+            <Text size='xs'>-</Text>
             <Center>
-              <IconCalendar size={14} stroke={1.5} color={theme.colors.dark[2]} />
-              <Text size='xs' color='dimmed' ml={4}>{new Date(publishedAt).toLocaleDateString()}</Text>
+              <Text size='xs'>{new Date(datePublished).toLocaleDateString()}</Text>
             </Center>
           </Group>
           {(showDescription === true) &&
-            <Text lineClamp={2}>{description}</Text>
+            <Text lineClamp={lineClamp}>{description}</Text>
           }
         </div>
       </Group>

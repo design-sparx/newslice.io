@@ -1,0 +1,294 @@
+{
+  "markets": [
+    {
+      "title": "Australia (en-AU)",
+      "iso": "en-AU",
+      "categories": [
+        {
+          "title": "Australia"
+        },
+        {
+          "title": "Business"
+        },
+        {
+          "title": "Entertainment"
+        },
+        {
+          "title": "Politics"
+        },
+        {
+          "title": "Sports"
+        },
+        {
+          "title": "World"
+        }
+      ]
+    },
+    {
+      "title": "Canada (en-CA)",
+      "iso": "en-CA",
+      "categories": [
+        {
+          "title": "Business"
+        },
+        {
+          "title": "Canada"
+        },
+        {
+          "title": "Entertainment"
+        },
+        {
+          "title": "LifeStyle"
+        },
+        {
+          "title": "Politics"
+        },
+        {
+          "title": "ScienceAndTechnology"
+        },
+        {
+          "title": "Sports"
+        },
+        {
+          "title": "World"
+        }
+      ]
+    },
+    {
+      "title": "China (zh-CN)",
+      "iso": "zh-CN",
+      "categories": [
+        {
+          "title": "Auto"
+        },
+        {
+          "title": "Business"
+        },
+        {
+          "title": "China"
+        },
+        {
+          "title": "Education"
+        },
+        {
+          "title": "Entertainment"
+        },
+        {
+          "title": "Military"
+        },
+        {
+          "title": "RealEstate"
+        },
+        {
+          "title": "ScienceAndTechnology"
+        },
+        {
+          "title": "Society"
+        },
+        {
+          "title": "Sports"
+        },
+        {
+          "title": "World"
+        }
+      ]
+    },
+    {
+      "title": "India(en-IN)",
+      "iso": "en-IN",
+      "categories": [
+        {
+          "title": "Business"
+        },
+        {
+          "title": "Entertainment"
+        },
+        {
+          "title": "India"
+        },
+        {
+          "title": "LifeStyle"
+        },
+        {
+          "title": "Politics"
+        },
+        {
+          "title": "ScienceAndTechnology"
+        },
+        {
+          "title": "Sports"
+        },
+        {
+          "title": "World"
+        }
+      ]
+    },
+    {
+      "title": "Japan(ja-JP)",
+      "iso": "ja-JP",
+      "categories": [
+        {
+          "title": "Business"
+        },
+        {
+          "title": "Entertainment"
+        },
+        {
+          "title": "Japan"
+        },
+        {
+          "title": "LifeStyle"
+        },
+        {
+          "title": "Politics"
+        },
+        {
+          "title": "ScienceAndTechnology"
+        },
+        {
+          "title": "Sports"
+        },
+        {
+          "title": "World"
+        }
+      ]
+    },
+    {
+      "title": "United Kingdom(en-GB)",
+      "iso": "en-GB",
+      "categories": [
+        {
+          "title": "Business"
+        },
+        {
+          "title": "Entertainment"
+        },
+        {
+          "title": "Health"
+        },
+        {
+          "title": "Politics"
+        },
+        {
+          "title": "ScienceAndTechnology"
+        },
+        {
+          "title": "Sports"
+        },
+        {
+          "title": "UK"
+        },
+        {
+          "title": "World"
+        }
+      ]
+    },
+    {
+      "title": "United States(en-US)",
+      "iso": "en-US",
+      "categories": [
+        {
+          "title": "Business"
+        },
+        {
+          "title": "Entertainment",
+          "subCategories": [
+            {
+              "title": "Entertainment_MovieAndTV"
+            },
+            {
+              "title": "Entertainment_Music"
+            }
+          ]
+        },
+        {
+          "title": "Health"
+        },
+        {
+          "title": "Politics"
+        },
+        {
+          "title": "Products"
+        },
+        {
+          "title": "ScienceAndTechnology",
+          "subCategories": [
+            {
+              "title": "Technology"
+            },
+            {
+              "title": "Science"
+            }
+          ]
+        },
+        {
+          "title": "Sports",
+          "subCategories": [
+            {
+              "title": "Sports_Golf"
+            },
+            {
+              "title": "Sports_NBA"
+            },
+            {
+              "title": "Sports_NFL"
+            },
+            {
+              "title": "Sports_NHL"
+            },
+            {
+              "title": "Sports_Soccer"
+            },
+            {
+              "title": "Sports_Tennis"
+            },
+            {
+              "title": "Sports_CFB"
+            },
+            {
+              "title": "Sports_CBB"
+            },
+            {
+              "title": "Sports_MLB"
+            }
+          ]
+        },
+        {
+          "title": "US",
+          "subCategories": [
+            {
+              "title": "US_Northeast"
+            },
+            {
+              "title": "US_South"
+            },
+            {
+              "title": "US_Midwest"
+            },
+            {
+              "title": "US_West"
+            }
+          ]
+        },
+        {
+          "title": "World"
+        },
+        {
+          "title": "World_Africa"
+        },
+        {
+          "title": "World_Americas"
+        },
+        {
+          "title": "World_Asia"
+        },
+        {
+          "title": "World_Europe"
+        },
+        {
+          "title": "World_MiddleEast"
+        }
+      ]
+    }
+  ]
+}

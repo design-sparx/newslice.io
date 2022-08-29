@@ -1,0 +1,65 @@
+:root {
+  --yellow: linear-gradient(180deg, #F8D49A -146.42%, #FAD79D -46.42%);
+  --orange: #fca61f;
+  --black: #242d49;
+  --gray: #788097;
+  --purple: linear-gradient(180deg, #BB67FF 0%, #C484F3 100%);
+  --pink: #FF919D;
+  --glass: rgba(255, 255, 255, 0.54);
+  --boxShadow: 0px 19px 60px rgb(0 0 0 / 8%);
+  --smboxShadow: -79px 51px 60px rgba(0, 0, 0, 0.08);
+  --activeItem: #f799a354;
+  --swatch-1: #d3d7e7;
+  --swatch-2: #a1a7cb;
+  --swatch-3: #bfc0d7;
+  --swatch-4: #cd98a1;
+  --swatch-5: #a99bb2;
+  --swatch-6: #665ebd;
+  --swatch-7: #8e7897;
+  --swatch-8: #46414d;
+}
+
+/* CSS theme */
+
+.App {
+  /*background: #40506F;*/
+  background-color: #eeeeee;
+  background-image: radial-gradient(at 47% 33%, hsl(0.00, 0%, 85%) 0, transparent 59%),
+  radial-gradient(at 82% 65%, hsl(0.00, 0%, 77%) 0, transparent 55%);
+}
+
+.App-Glass {
+  backdrop-filter: blur(1px) saturate(180%);
+  -webkit-backdrop-filter: blur(1px) saturate(180%);
+}
+
+.Card-Bg {
+  /*background: rgba(255, 255, 255, 0.54);*/
+  /*background: linear-gradient(106.37deg, #54617A 29.63%, #54617A 51.55%, #51607D 90.85%);*/
+  /*background: #54617A;*/
+  /*color: white;*/
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(209, 213, 219, 0.3);
+
+  &:hover,
+  &:focus {
+    a, span {
+      text-decoration: underline;
+    }
+  }
+}
+
+
+.Nav-Bg {
+  /*background: #151B25;*/
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(209, 213, 219, 0.3);
+}
+
+.Input-Bg, .mantine-Input-input {
+  /*background: #51607D;*/
+}

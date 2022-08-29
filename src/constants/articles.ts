@@ -1,19 +1,52 @@
 export interface Article {
-  source: {
-    id: string | number | null;
-    name: string;
-  };
-  author: string | null;
-  title: string;
-  description: string | null;
-  url: string | undefined;
-  urlToImage: string | undefined | null;
-  publishedAt: string;
-  content: string | null;
+  _type: string,
+  name: string,
+  url: string,
+  image?: Image,
+  description: string,
+  provider: Provider[],
+  datePublished: string
+  about?: Array<{
+    _type: string
+    readLink: string
+    name: string
+  }>,
+  mentions?: Array<{
+    _type: string
+    name: string
+  }>,
+  category?: string
 }
 
 export interface Articles {
-  status: string;
-  totalResults: number;
-  articles: Article[];
+  _type: string,
+  webSearchUrl: string,
+  value: Article[]
+}
+
+export interface Provider {
+  _type: string,
+  name: string,
+  image?: {
+    _type: string,
+    thumbnail: ProviderThumbnail
+  }
+}
+
+export interface ProviderThumbnail {
+  _type: string,
+  contentUrl: string,
+}
+
+export interface Image {
+  _type: string,
+  thumbnail: ImageThumbnail
+  isLicensed?: boolean
+}
+
+export interface ImageThumbnail {
+  _type?: string,
+  contentUrl?: string,
+  width?: number,
+  height?: number
 }
