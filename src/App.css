@@ -20,12 +20,10 @@
 }
 
 /* CSS theme */
-
 .App {
   /*background: #40506F;*/
   background-color: #eeeeee;
-  background-image: radial-gradient(at 47% 33%, hsl(0.00, 0%, 85%) 0, transparent 59%),
-  radial-gradient(at 82% 65%, hsl(0.00, 0%, 77%) 0, transparent 55%);
+  background-image: radial-gradient(at 47% 33%, hsl(0deg, 0%, 85%) 0, transparent 59%), radial-gradient(at 82% 65%, hsl(0deg, 0%, 77%) 0, transparent 55%);
 }
 
 .App-Glass {
@@ -41,15 +39,10 @@
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   background-color: rgba(255, 255, 255, 0.75);
-
-  &:hover,
-  &:focus {
-    a, span {
-      text-decoration: underline;
-    }
-  }
 }
-
+.Card-Bg:hover a, .Card-Bg:hover span, .Card-Bg:focus a, .Card-Bg:focus span {
+  text-decoration: underline;
+}
 
 .Nav-Bg {
   /*background: #151B25;*/
@@ -61,3 +54,5 @@
 .Input-Bg, .mantine-Input-input {
   /*background: #51607D;*/
 }
+
+/*# sourceMappingURL=App.css.map */

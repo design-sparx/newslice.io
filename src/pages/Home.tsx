@@ -6,7 +6,7 @@ import GeneralArticles from '../data/BingNews/topicUsGeneral.json';
 const Home = (): JSX.Element => {
   return (
     <div>
-      <Wrapper showFeed>
+      <Wrapper showFeed showRight>
         <HomeSection headlines={GeneralArticles.value} />
       </Wrapper>
     </div>

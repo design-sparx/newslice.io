@@ -121,6 +121,10 @@ const TextImageCard = ({ className, article, size, showDescription }: ArticleCar
                     {name}
                   </Text>
 
+                  <Text className={classes.description} size='sm' lineClamp={3}>
+                    {description}
+                  </Text>
+
                   <Group noWrap spacing={4} className={classes.footer}>
                     <Center>
                       <Avatar size='sm' src={provider[0].image?.thumbnail.contentUrl} />
@@ -131,10 +135,6 @@ const TextImageCard = ({ className, article, size, showDescription }: ArticleCar
                       <Text size='xs'>{new Date(datePublished).toLocaleDateString()}</Text>
                     </Center>
                   </Group>
-
-                  <Text className={classes.description} size='sm' lineClamp={3}>
-                    {description}
-                  </Text>
                 </Stack>
               </Center>
             </>

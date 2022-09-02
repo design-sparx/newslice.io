@@ -1,7 +1,7 @@
 import { MantineProvider } from '@mantine/core';
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { CategoryPage, HomePage } from './pages';
+import { CategoryPage, HomePage, SearchPage } from './pages';
 import './App.scss';
 
 const App = (): JSX.Element => {
@@ -20,6 +20,7 @@ const App = (): JSX.Element => {
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/category/:categoryTitle' element={<CategoryPage />} />
+          <Route path='/search/:query' element={<SearchPage />} />
         </Routes>
       </MantineProvider>
     </div>

@@ -153,7 +153,7 @@ const Category = (): JSX.Element => {
 
   return (
     <div>
-      <Wrapper>
+      <Wrapper showRight>
         <Container fluid>
           <Box mb='lg'>
             <Group className={classes.titleWrapper}>

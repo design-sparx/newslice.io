@@ -1,7 +1,6 @@
 import {
   createStyles,
   Header,
-  Input,
   Group,
   Text,
   Divider,
@@ -9,16 +8,19 @@ import {
   ActionIcon,
   Tooltip,
   Center,
-  Menu,
+  Menu, TextInput,
 } from '@mantine/core';
 import { IconSearch, IconNews, IconBell, IconSettings, IconChevronDown, IconDots } from '@tabler/icons';
 import { Market } from '../../constants/market';
+import React, { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const useStyles = createStyles((theme) => ({
   header: {
     position: 'sticky',
     paddingTop: theme.spacing.sm,
     paddingBottom: theme.spacing.sm,
+    boxShadow: theme.shadows.md,
   },
 
   inner: {
@@ -57,7 +59,7 @@ const useStyles = createStyles((theme) => ({
     fontWeight: 500,
 
     '&:hover': {
-      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[2],
     },
   },
 
@@ -80,6 +82,9 @@ interface AppNavProps {
 
 const AppNav = ({ market, maxMenuItems }: AppNavProps): JSX.Element => {
   const { classes, cx } = useStyles();
+  const [searchTerm, setSearchTerm] = useState('');
+  const navigate = useNavigate();
+  const { query } = useParams();
 
   const menuHandler = (): JSX.Element => {
     let items: JSX.Element[] | undefined;
@@ -202,6 +207,21 @@ const AppNav = ({ market, maxMenuItems }: AppNavProps): JSX.Element => {
     </>;
   };
 
+  /**
+   * search handler
+   * @param event
+   */
+  const handleKeyDown = (event: React.KeyboardEvent): void => {
+    if (event.key === 'Enter') {
+      navigate(`/search/${searchTerm}`);
+    }
+  };
+
+  useEffect(() => {
+    setSearchTerm(query ?? '');
+  }, [query]);
+
+
   return (
     <Header className={cx(classes.header, 'Nav-Bg')} mb={30} height='100%'>
       <div className={classes.inner}>
@@ -210,10 +230,14 @@ const AppNav = ({ market, maxMenuItems }: AppNavProps): JSX.Element => {
           <Text size='lg' transform='uppercase' weight={700}>Newslice</Text>
         </Group>
         <Group>
-          <Input
-            className={cx(classes.search, 'Input-Bg')}
+          <TextInput
+            className={cx(classes.search, '')}
             placeholder='Search'
             icon={<IconSearch size={16} stroke={1.5} />}
+            variant='filled'
+            onKeyDown={handleKeyDown}
+            onChange={(evt) => setSearchTerm(evt.currentTarget.value)}
+            value={searchTerm}
           />
         </Group>
         <Group>

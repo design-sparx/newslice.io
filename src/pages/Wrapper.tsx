@@ -15,6 +15,7 @@ import TrendingArticles from '../data/BingNews/trendingTopicsUS.json';
 interface WrapperProps {
   children: ReactNode;
   showFeed?: boolean;
+  showRight?: boolean;
 }
 
 const useStyles = createStyles((theme: MantineTheme) => ({
@@ -25,7 +26,7 @@ const useStyles = createStyles((theme: MantineTheme) => ({
   },
 }));
 
-const Wrapper = ({ children, showFeed }: WrapperProps): JSX.Element => {
+const Wrapper = ({ children, showFeed, showRight }: WrapperProps): JSX.Element => {
   const [market, setMarket] = useState<Market>();
   const { classes } = useStyles();
 
@@ -41,22 +42,24 @@ const Wrapper = ({ children, showFeed }: WrapperProps): JSX.Element => {
             <FeedSection articles={TrendingArticles.value.slice(0, 10)} />
           }
           <Grid>
-            <Grid.Col lg={8}>
+            <Grid.Col lg={(showRight === true) ? 8: 12}>
               {children}
             </Grid.Col>
-            <Grid.Col lg={4}>
-              <SimpleGrid breakpoints={[
-                { minWidth: 'sm', cols: 1 },
-                { minWidth: 'md', cols: 2 },
-                { minWidth: 1200, cols: 1 },
-              ]}>
-                <PopularSection articles={UsArticles.value.slice(0, 5)} />
-                <RecentSection articles={GeneralArticles.value.slice(0, 5)} />
-              </SimpleGrid>
-            </Grid.Col>
+            {(showRight === true) &&
+              <Grid.Col lg={4}>
+                <SimpleGrid breakpoints={[
+                  { minWidth: 'sm', cols: 1 },
+                  { minWidth: 'md', cols: 2 },
+                  { minWidth: 1200, cols: 1 },
+                ]}>
+                  <PopularSection articles={UsArticles.value.slice(0, 5)} />
+                  <RecentSection articles={GeneralArticles.value.slice(0, 5)} />
+                </SimpleGrid>
+              </Grid.Col>
+            }
           </Grid>
         </Container>
-      <FooterSection data={FooterLinks.data} />
+      <FooterSection />
     </>
   );
 };
