@@ -223,7 +223,7 @@ const AppNav = ({ market, maxMenuItems }: AppNavProps): JSX.Element => {
 
 
   return (
-    <Header className={cx(classes.header, 'Nav-Bg')} mb={30} height='100%'>
+    <Header className={cx(classes.header, 'Nav-Bg')} mb={60} height='100%'>
       <div className={classes.inner}>
         <Group>
           <IconNews size={24} />

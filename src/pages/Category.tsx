@@ -36,6 +36,7 @@ import UsNorthEastArticles from '../data/BingNews/topicUs_US_Northeast.json';
 import UsSouthArticles from '../data/BingNews/topicUs_US_South.json';
 import MidwestArticles from '../data/BingNews/topicUs_US_Midwest.json';
 import WestArticles from '../data/BingNews/topicUs_US_West.json';
+import { Helmet } from 'react-helmet';
 
 const useStyles = createStyles((theme: MantineTheme) => ({
   wrapper: {
@@ -154,6 +155,9 @@ const Category = (): JSX.Element => {
   return (
     <div>
       <Wrapper showRight>
+        <Helmet>
+          <title>Newslice - {categoryTitle}</title>
+        </Helmet>
         <Container fluid>
           <Box mb='lg'>
             <Group className={classes.titleWrapper}>

@@ -3,11 +3,10 @@ import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from '@tabler/
 
 const useStyles = createStyles((theme) => ({
   footer: {
-    marginTop: 30,
+    marginTop: 60,
     borderTop: `1px solid ${
       theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[2]
     }`,
-
   },
 
   inner: {

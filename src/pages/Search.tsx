@@ -1,4 +1,4 @@
-import { Container, SimpleGrid, Text } from '@mantine/core';
+import { Box, Container, SimpleGrid, Text } from '@mantine/core';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Wrapper from './Wrapper';
@@ -37,6 +37,7 @@ import _ from 'lodash';
 import { Article } from '../constants/articles';
 import { HorizontalCard } from '../components/ArticleCards';
 import { Size } from '../constants/cardSizes';
+import { Helmet } from 'react-helmet';
 
 const Search = (): JSX.Element => {
   const { query } = useParams();
@@ -88,11 +89,17 @@ const Search = (): JSX.Element => {
 
   return (
     <Wrapper>
+      <Helmet>
+        <title>Newslice - Search</title>
+      </Helmet>
       <Container fluid style={{ minHeight: '70vh' }}>
         {contextData?.length > 0 ?
-          <SimpleGrid spacing='sm'>
-            {contextData?.map(d => <HorizontalCard key={d.url} article={d} className='Card-Bg' size={Size.lg} />)}
-          </SimpleGrid>
+          <Box>
+            <Text mb="md">{contextData.length} articles found</Text>
+            <SimpleGrid spacing='sm'>
+              {contextData?.map(d => <HorizontalCard key={d.url} article={d} className='Card-Bg' size={Size.lg} />)}
+            </SimpleGrid>
+          </Box>
           : <Text>No results found</Text>
         }
       </Container>
