@@ -4,6 +4,7 @@ import { useColorScheme } from '@mantine/hooks';
 import { Route, Routes } from 'react-router-dom';
 import { CategoryPage, EmptySearchPage, Error404Page, HomePage, SearchPage } from './pages';
 import './App.scss';
+import RouterTransition from './components/RouterTransition';
 
 const App = (): JSX.Element => {
   const preferredColorScheme = useColorScheme();
@@ -11,10 +12,8 @@ const App = (): JSX.Element => {
   const toggleColorScheme = (value?: ColorScheme): void =>
     setColorScheme(value ?? (colorScheme === 'dark' ? 'light' : 'dark'));
 
-  console.log(colorScheme);
-
   return (
-    <div className={colorScheme === 'dark' ? 'App-dark': 'App-light'}>
+    <div className={colorScheme === 'dark' ? 'App-dark' : 'App-light'}>
       <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
         <MantineProvider
           withNormalizeCSS
@@ -49,7 +48,7 @@ const App = (): JSX.Element => {
             primaryColor: 'brand',
           }}
         >
-          <Routes>
+          <RouterTransition>
             <Route path='/' element={<HomePage />} />
             <Route path='category/:categoryTitle' element={<CategoryPage />} />
             <Route path='search'>
@@ -57,7 +56,7 @@ const App = (): JSX.Element => {
               <Route path='/search' element={<EmptySearchPage />} />
             </Route>
             <Route path='*' element={<Error404Page />} />
-          </Routes>
+          </RouterTransition>
         </MantineProvider>
       </ColorSchemeProvider>
     </div>
