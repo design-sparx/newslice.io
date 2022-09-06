@@ -20,12 +20,39 @@
 }
 
 /* CSS theme */
-
-.App {
+// Light theme
+.App-light {
   /*background: #40506F;*/
   background-color: #eeeeee;
-  background-image: radial-gradient(at 47% 33%, hsl(0.00, 0%, 85%) 0, transparent 59%),
-  radial-gradient(at 82% 65%, hsl(0.00, 0%, 77%) 0, transparent 55%);
+  background-image: radial-gradient(at 47% 33%, hsl(0.00, 0%, 85%) 0, transparent 59%), radial-gradient(at 82% 65%, hsl(0.00, 0%, 77%) 0, transparent 55%);
+
+  .Card-Bg {
+    /*background: rgba(255, 255, 255, 0.54);*/
+    /*background: linear-gradient(106.37deg, #54617A 29.63%, #54617A 51.55%, #51607D 90.85%);*/
+    /*background: #54617A;*/
+    /*color: white;*/
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.75);
+
+    &:hover,
+    &:focus {
+      a, span {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .Nav-Bg {
+    /*background: #151B25;*/
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.75);
+  }
+
+  .mantine-Title-root {
+    color: black;
+  }
 }
 
 .App-Glass {
@@ -33,31 +60,35 @@
   -webkit-backdrop-filter: blur(1px) saturate(180%);
 }
 
-.Card-Bg {
-  /*background: rgba(255, 255, 255, 0.54);*/
-  /*background: linear-gradient(106.37deg, #54617A 29.63%, #54617A 51.55%, #51607D 90.85%);*/
-  /*background: #54617A;*/
-  /*color: white;*/
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  background-color: rgba(255, 255, 255, 0.75);
-
-  &:hover,
-  &:focus {
-    a, span {
-      text-decoration: underline;
-    }
-  }
-}
-
-
-.Nav-Bg {
-  /*background: #151B25;*/
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  background-color: rgba(255, 255, 255, 0.75);
-}
-
 .Input-Bg, .mantine-Input-input {
   /*background: #51607D;*/
+}
+
+// Dark theme
+.App-dark {
+  background-color: #1d1d1d;
+  background-image: radial-gradient(at 47% 33%, hsl(0.00, 0%, 12%) 0, transparent 59%), radial-gradient(at 82% 65%, hsl(218.18, 0%, 18%) 0, transparent 55%);
+
+  .Card-Bg {
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(0, 0, 0, 0.75);
+
+    &:hover,
+    &:focus {
+      a, span {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .Nav-Bg {
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+
+  .mantine-Title-root {
+    color: white;
+  }
 }

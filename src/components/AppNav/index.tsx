@@ -8,9 +8,18 @@ import {
   ActionIcon,
   Tooltip,
   Center,
-  Menu, TextInput,
+  Menu, TextInput, useMantineColorScheme,
 } from '@mantine/core';
-import { IconSearch, IconNews, IconBell, IconSettings, IconChevronDown, IconDots } from '@tabler/icons';
+import {
+  IconSearch,
+  IconNews,
+  IconBell,
+  IconSettings,
+  IconChevronDown,
+  IconDots,
+  IconSun,
+  IconMoonStars,
+} from '@tabler/icons';
 import { Market } from '../../constants/market';
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -85,6 +94,8 @@ const AppNav = ({ market, maxMenuItems }: AppNavProps): JSX.Element => {
   const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
   const { query } = useParams();
+  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+  const dark = colorScheme === 'dark';
 
   const menuHandler = (): JSX.Element => {
     let items: JSX.Element[] | undefined;
@@ -242,13 +253,21 @@ const AppNav = ({ market, maxMenuItems }: AppNavProps): JSX.Element => {
         </Group>
         <Group>
           <Tooltip label='notifications'>
-            <ActionIcon>
+            <ActionIcon title='notifications'>
               <IconBell size={18} />
             </ActionIcon>
           </Tooltip>
           <Tooltip label='preferences'>
-            <ActionIcon>
+            <ActionIcon title='preferences'>
               <IconSettings size={18} />
+            </ActionIcon>
+          </Tooltip>
+          <Tooltip label='switch theme'>
+            <ActionIcon
+              onClick={() => toggleColorScheme()}
+              title='Toggle color scheme'
+            >
+              {dark ? <IconSun size={18} /> : <IconMoonStars size={18} />}
             </ActionIcon>
           </Tooltip>
         </Group>
