@@ -131,9 +131,9 @@ const TextImageCard = ({ className, article, size, showDescription }: ArticleCar
                     {name}
                   </Text>
 
-                    <Text className={classes.description} size='sm' lineClamp={3}>
-                      {description}
-                    </Text>
+                  <Text className={classes.description} size='sm' lineClamp={3}>
+                    {description}
+                  </Text>
 
                   <Group noWrap spacing={4} className={classes.footer}>
                     <Center>

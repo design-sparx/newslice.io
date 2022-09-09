@@ -8,7 +8,7 @@ import {
   ActionIcon,
   Tooltip,
   Center,
-  Menu, TextInput, useMantineColorScheme,
+  Menu, TextInput, useMantineColorScheme, Title,
 } from '@mantine/core';
 import {
   IconSearch,
@@ -90,7 +90,7 @@ interface AppNavProps {
 }
 
 const AppNav = ({ market, maxMenuItems }: AppNavProps): JSX.Element => {
-  const { classes, cx } = useStyles();
+  const { classes, cx, theme } = useStyles();
   const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
   const { query } = useParams();
@@ -237,15 +237,15 @@ const AppNav = ({ market, maxMenuItems }: AppNavProps): JSX.Element => {
     <Header className={cx(classes.header, 'Nav-Bg')} mb={60} height='100%'>
       <div className={classes.inner}>
         <Group>
-          <IconNews size={24} />
-          <Text size='lg' transform='uppercase' weight={700}>Newslice</Text>
+          <IconNews size={24} color={theme.colorScheme === 'dark' ? 'white' : 'black'} />
+          <Title order={2}>Newslice</Title>
         </Group>
         <Group>
           <TextInput
             className={cx(classes.search, '')}
             placeholder='Search'
             icon={<IconSearch size={16} stroke={1.5} />}
-            variant='filled'
+            variant='default'
             onKeyDown={handleKeyDown}
             onChange={(evt) => setSearchTerm(evt.currentTarget.value)}
             value={searchTerm}
