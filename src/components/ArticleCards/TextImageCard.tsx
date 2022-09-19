@@ -134,6 +134,10 @@ const TextImageCard = ({ className, article, size, showDescription }: ArticleCar
                     {description}
                   </Text>
 
+                  <Text className={classes.description} size='sm' lineClamp={3}>
+                    {description}
+                  </Text>
+
                   <Group noWrap spacing={4} className={classes.footer}>
                     <Center>
                       <Avatar size='sm' src={provider[0].image?.thumbnail.contentUrl} />
