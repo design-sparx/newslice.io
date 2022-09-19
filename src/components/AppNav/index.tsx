@@ -2,7 +2,6 @@ import {
   createStyles,
   Header,
   Group,
-  Text,
   Divider,
   Container,
   ActionIcon,
