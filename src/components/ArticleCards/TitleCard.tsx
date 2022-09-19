@@ -1,4 +1,4 @@
-import { createStyles, Card, Image, Text, Group, Grid, Center, Avatar, Title } from '@mantine/core';
+import { createStyles, Card, Image, Text, Group, Grid, Center, Avatar } from '@mantine/core';
 import { Article } from '../../constants/articles';
 
 const useStyles = createStyles((theme) => ({
