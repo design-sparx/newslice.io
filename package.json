@@ -2,6 +2,7 @@
   "name": "newslice.io",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://kelvink96ltd.github.io/newsclice/",
   "dependencies": {
     "@emotion/react": "^11.10.0",
     "@mantine/carousel": "^5.1.6",
