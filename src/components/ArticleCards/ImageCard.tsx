@@ -49,7 +49,7 @@ const useStyles = createStyles((theme, _params, getRef) => {
     },
 
     title: {
-      color: theme.white,
+      color: 'white',
       marginBottom: theme.spacing.md,
     },
 

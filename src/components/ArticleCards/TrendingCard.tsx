@@ -70,13 +70,13 @@ const TrendingCard = ({ article, size, showDescription }: ArticleCardVerticalPro
             className={classes.title}
             lineClamp={lineClamp}
             mb={margin}
-            size={size === Size.lg ? 'md': 'sm'}
+            size={size === Size.lg ? 'md' : 'sm'}
             component='span'
           >
             {query.text}
           </Text>
           <Text size='xs'>{name}</Text>
-          <Text size='xs'weight={500}>{image.provider[0].name}</Text>
+          <Text size='xs' weight={500}>{image.provider[0].name}</Text>
           {(showDescription === true) &&
             <Text lineClamp={lineClamp}>{isBreakingNews}</Text>
           }

@@ -1,4 +1,14 @@
-import { Avatar, Card, Center, createStyles, Group, Image, MantineTheme, Stack, Text } from '@mantine/core';
+import {
+  Avatar,
+  Card,
+  Center,
+  createStyles,
+  Group,
+  Image,
+  MantineTheme,
+  Stack,
+  Text,
+} from '@mantine/core';
 import { Article } from '../../constants/articles';
 import { Size } from '../../constants/cardSizes';
 
@@ -120,6 +130,9 @@ const TextImageCard = ({ className, article, size, showDescription }: ArticleCar
                   >
                     {name}
                   </Text>
+                  <Text className={classes.description} size='sm' lineClamp={3}>
+                    {description}
+                  </Text>
 
                   <Group noWrap spacing={4} className={classes.footer}>
                     <Center>
@@ -131,10 +144,6 @@ const TextImageCard = ({ className, article, size, showDescription }: ArticleCar
                       <Text size='xs'>{new Date(datePublished).toLocaleDateString()}</Text>
                     </Center>
                   </Group>
-
-                  <Text className={classes.description} size='sm' lineClamp={3}>
-                    {description}
-                  </Text>
                 </Stack>
               </Center>
             </>
