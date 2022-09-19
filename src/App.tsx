@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { MantineProvider, ColorSchemeProvider, ColorScheme } from '@mantine/core';
 import { useColorScheme } from '@mantine/hooks';
-import { Route, Routes } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { CategoryPage, EmptySearchPage, Error404Page, HomePage, SearchPage } from './pages';
 import './App.scss';
 import RouterTransition from './components/RouterTransition';

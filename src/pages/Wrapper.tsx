@@ -1,6 +1,5 @@
 import React, { ReactNode, useEffect, useState } from 'react';
 import AppNav from '../components/AppNav';
-import { FooterLinks } from '../data/NewsApiOrg';
 import FooterSection from '../components/Footer';
 import { Container, createStyles, Grid, MantineTheme, SimpleGrid } from '@mantine/core';
 import PopularSection from '../components/Home/Popular';
