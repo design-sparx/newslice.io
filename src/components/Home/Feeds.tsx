@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import { Carousel } from '@mantine/carousel';
-import { createStyles, Divider, Group, MantineTheme, Title, useMantineTheme } from '@mantine/core';
-import { useMediaQuery } from '@mantine/hooks';
+import { createStyles, Divider, Group, MantineTheme, Title } from '@mantine/core';
 import Autoplay from 'embla-carousel-autoplay';
 import { Size } from '../../constants/cardSizes';
 import { TrendingArticle } from '../../constants/trendingArticles';
@@ -24,8 +23,6 @@ interface FeedProps {
 
 const FeedSection = ({ articles }: FeedProps): JSX.Element => {
   const { classes } = useStyles();
-  const theme = useMantineTheme();
-  const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm}px)`);
   const autoplay = useRef(Autoplay({ delay: 10000 }));
 
   const slides = articles.slice(0, 5).map((article) => (
@@ -44,10 +41,15 @@ const FeedSection = ({ articles }: FeedProps): JSX.Element => {
       <Divider className={classes.titleWrapper} />
       <Carousel
         slideSize='25%'
-        breakpoints={[{ maxWidth: 'sm', slideSize: '100%', slideGap: 2 }]}
-        slideGap='xs'
+        breakpoints={[
+          { maxWidth: 'xl', slideSize: '25%' },
+          { maxWidth: 'lg', slideSize: '33.3333%' },
+          { maxWidth: 'md', slideSize: '50%' },
+          { maxWidth: 'sm', slideSize: '100%' },
+        ]}
+        slideGap='sm'
         align='start'
-        slidesToScroll={mobile ? 1 : 1}
+        slidesToScroll={1}
         draggable
         controlSize={32}
         mb='md'

@@ -77,6 +77,9 @@ const HorizontalCard = ({ article, size, showDescription, className }: ArticleCa
           >
             {name}
           </Text>
+          {(showDescription === true || size === Size.lg) &&
+            <Text lineClamp={lineClamp} mb="md">{description}</Text>
+          }
           <Group noWrap spacing='xs'>
             <Center>
               <Avatar size='xs' src={provider[0].image?.thumbnail.contentUrl} />
@@ -87,9 +90,6 @@ const HorizontalCard = ({ article, size, showDescription, className }: ArticleCa
               <Text size='xs'>{new Date(datePublished).toLocaleDateString()}</Text>
             </Center>
           </Group>
-          {(showDescription === true) &&
-            <Text lineClamp={lineClamp}>{description}</Text>
-          }
         </div>
       </Group>
     </Card>
