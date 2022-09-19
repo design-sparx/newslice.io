@@ -25,6 +25,7 @@
   background-color: #eeeeee;
   background-image: radial-gradient(at 47% 33%, hsl(0deg, 0%, 85%) 0, transparent 59%), radial-gradient(at 82% 65%, hsl(0deg, 0%, 77%) 0, transparent 55%);
 }
+
 .App-light .Card-Bg {
   /*background: rgba(255, 255, 255, 0.54);*/
   /*background: linear-gradient(106.37deg, #54617A 29.63%, #54617A 51.55%, #51607D 90.85%);*/
