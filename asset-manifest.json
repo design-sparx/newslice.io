@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/newslice/static/css/main.f072303d.css",
+    "main.js": "/newslice/static/js/main.3a984ad1.js",
+    "static/media/no-results.png": "/newslice/static/media/no-results.fb23b662cb7433fa95e4.png",
+    "index.html": "/newslice/index.html",
+    "main.f072303d.css.map": "/newslice/static/css/main.f072303d.css.map",
+    "main.3a984ad1.js.map": "/newslice/static/js/main.3a984ad1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f072303d.css",
+    "static/js/main.3a984ad1.js"
+  ]
+}
