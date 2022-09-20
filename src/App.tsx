@@ -49,7 +49,7 @@ const App = (): JSX.Element => {
           }}
         >
           <RouterTransition>
-            <Route index element={<HomePage />} />
+            <Route path='/' element={<HomePage />} />
             <Route path='category/:categoryTitle' element={<CategoryPage />} />
             <Route path='search'>
               <Route path=':query' element={<SearchPage />} />
