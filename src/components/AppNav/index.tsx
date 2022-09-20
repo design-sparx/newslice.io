@@ -174,7 +174,7 @@ const AppNav = ({ market, maxMenuItems }: AppNavProps): JSX.Element => {
 
         if (menuItems != null) {
           return (
-            <Menu trigger='hover' exitTransitionDuration={0}>
+            <Menu trigger='hover' exitTransitionDuration={0} key={`menu-${c.title}`}>
               <Menu.Target>
                 <a
                   href={`/#/category/${c.title}`}
